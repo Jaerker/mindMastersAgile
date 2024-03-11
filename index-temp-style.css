@@ -1,0 +1,33 @@
+*{
+    margin:0;
+    padding:0;
+}
+.darkgreen-bg-color{
+    background: #38846D;
+}
+
+.bg-images{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.bg-images__leaves{   
+    height:100%;
+    position:absolute;
+    top:0;
+}
+.bg-images__leaves--right{
+    right:0;
+}
+.bg-images__leaves--left{
+    left:0;
+}
+.company-logo{
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+}
