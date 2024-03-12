@@ -1,33 +1,146 @@
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+
 *{
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
+
 }
-.darkgreen-bg-color{
+
+.darkgreen-bg-color {
     background: #38846D;
 }
 
-.bg-images{
-    display:flex;
+.bg-images {
+    display: flex;
     justify-content: space-between;
     align-items: center;
 
 }
-.bg-images__leaves{   
-    height:100%;
-    position:absolute;
-    top:0;
-}
-.bg-images__leaves--right{
-    right:0;
-}
-.bg-images__leaves--left{
-    left:0;
-}
-.company-logo{
+
+.bg-images__leaves {
+    height: 100%;
     position: absolute;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    margin:auto;
+    top: 0;
+}
+
+.bg-images__leaves--right {
+    right: 0;
+}
+
+.bg-images__leaves--left {
+    left: 0;
+}
+
+.company-logo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+}
+
+.menu-hamburger {
+    z-index: 2;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    border-style: none;
+    border-radius: 50%;
+    background: #FFFFFF;
+    background-size: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.menu-hamburger--open {
+    background-image: url('Assets/close.svg');
+}
+
+.menu-hamburger--closed {
+    background-image: url('Assets/navicon.svg');
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    background: #2F2926;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+.menu--hidden {
+    display: none;
+}
+
+.menu__list {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.menu-hamburger{
+    z-index:2;
+    position:fixed;
+    top:10px;
+    left:10px;
+    width:50px;
+    height:50px;
+    border-style:none;
+    border-radius:50%;
+    background:#FFFFFF;
+    background-size: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.menu-hamburger--open{
+    background-image: url('Assets/close.svg');
+}
+
+.menu-hamburger--closed{
+    background-image: url('Assets/navicon.svg');
+}
+
+.menu__choice {
+    list-style: none;
+    font-weight: 700;
+    font-family: "PT Serif", serif;
+    font-size: 2rem;
+    line-height: 120%;
+
+}
+
+.menu__choice::before {
+    content: '';
+    display: block;
+    width: 5rem;
+    height: 2px;
+    border-radius: 1px;
+    margin: 10px auto;
+    background: #FFFFFF;
+    opacity: 20%;
+
+}
+
+.menu__choice:first-child::before {
+    display: none;
+}
+
+.menu__link {
+    color: #FFFFFF;
+    text-decoration: none;
 }
