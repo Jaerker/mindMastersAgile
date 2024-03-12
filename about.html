@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./index-temp-style.css">
     <title>About Airbeans-coffee</title>
 </head>
 
@@ -16,8 +17,14 @@
             <img src="./Assets/graphics-header.svg" alt="header - leafs">
         </header>
 
-        <nav>
-            <!-- JOHANS HAMBURGER MENU -->
+        <button class="menu-hamburger menu-hamburger--closed" id="menuHamburger"></button>
+        <nav class="menu menu--hidden" id="navMenu">
+            <ul class="menu__list">
+                <li class="menu__choice"><a href="./product.html" class="menu__link">Meny</a></li>
+                <li class="menu__choice"><a href="./about.html" class="menu__link">Vårt kaffe</a></li> 
+                <li class="menu__choice"><a href="./profile.html" class="menu__link">Min profil</a></li> 
+                <li class="menu__choice"><a href="./status.html" class="menu__link">Orderstatus</a></li>
+            </ul>
         </nav>
 
         <main class="about__main-container">
@@ -68,7 +75,8 @@
 
 
 
-    <link type="module" rel="stylesheet" href="./script.js">
+    <script type="module" src="./script.js"></script>
+
 </body>
 
 </html>
