@@ -47,7 +47,7 @@ const user = {
 
     logout: () => localRequest.remove('currentUser'),
 
-    getCurrentUser: () => localRequest.get('currentUser').username,
+    getCurrentUser: () => localRequest.get('currentUser')?.username,
 
     /**
      * Changes the current user from localStorage
@@ -160,9 +160,39 @@ const product = {
     },
 }
 
+const orderHistory = {
+    list: () => {
+        const data = localRequest.get('orderHistory');
+        if(!data){    
+            localRequest.change('orderHistory', []);
+            return localRequest.get('orderHistory');
+        }
+        if(user.getCurrentUser()){
+
+            const results = data.filter(x => x.username === user.getCurrentUser());
+            return results;
+
+        }
+        return data;
+    },
+    add: async (orderToAdd) => {
+        try{
+         
+            const list = await orderHistory.list();
+            list.push(orderToAdd);
+            localRequest.change('orderHistory', list);
+            // console.log(list);
+            return true;
+        }catch(e){
+            return e;
+        }
+    },
+}
+
 const api = {
     user,
-    product
+    product,
+    orderHistory
 }
 
 
