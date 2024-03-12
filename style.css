@@ -1,0 +1,29 @@
+  /*BASE */
+
+  :root {
+    --color-dark : #000000;
+    --mörk-gråbrun : #2F2926;
+    --red-color : #E5674E;
+    --color-white: #ffffff;
+    --color-light : #F3E4E1;
+    --color--green: #0E927D;
+    --color--dark-green: #1A4143;
+    --color-light-green:#D9D9D9;
+
+    
+   
+    
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3 {
+    text-transform: uppercase;
+    --text-font: 'PT Serif', serif;
+    --text-font: 'Work Sans', sans-serif;
+}
+
