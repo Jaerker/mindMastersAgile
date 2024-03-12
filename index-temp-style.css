@@ -1,4 +1,6 @@
+
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 
 
 *{
@@ -13,6 +15,7 @@
     display:flex;
     justify-content: space-between;
     align-items: center;
+
 }
 .bg-images__leaves{   
     height:100%;
@@ -32,6 +35,7 @@
     left:0;
     right:0;
     margin:auto;
+
 }
 
 .menu-hamburger{
@@ -110,3 +114,4 @@
     color:#FFFFFF;
     text-decoration: none;
 }
+
