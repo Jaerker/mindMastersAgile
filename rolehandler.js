@@ -27,5 +27,53 @@ async function fetchDataAndLog() {
     }
 }
 
-//anropar funktion och väntar till de ska vara i consolen
+//anropar funktion och väntar på när de ska vara i consolen
 fetchDataAndLog();
+
+
+//funktion för att hämta aktiv användaren
+function getActiveUser(userData) {
+    try {
+        return userData.users.find(user => user.isActive);
+    } catch (error) {
+        console.error('Fel vid hämtning av aktiva användaren:', error);
+    }
+}
+
+
+
+//funktion för att hämta användarens role
+function getUserRole(username, userData) {
+    try {
+        const user = userData.users.find(user => user.username === username);
+        if (user) {
+            return user.role;
+        } else {
+            return 'Användaren finns inte!';
+        }
+    } catch (error) {
+        console.error('Fiel vid hämtning av användarens role!');
+    }
+}
+
+
+
+//funktion för att hämta beskrivning role
+function getRoleDescription(username) {
+    try {
+        const userRole = getUserRole(username, userRole);
+        switch (user.role) {
+            case 'admin':
+                return 'Administrator';
+            case 'user':
+                return 'Användaren';
+            default:
+                return 'Unknow';
+        }
+    } catch (error) {
+        console.error('Fel vid att hämta role:', error);
+    }
+
+}
+
+
