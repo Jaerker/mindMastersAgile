@@ -20,8 +20,11 @@ fetchUserData();
 //funktion att hämta data och läsa i consolen
 async function fetchDataAndLog() {
     try {
-        const userData = await fetchUserData('https://santosnr6.github.io/Data/airbeanusers.json');
+        const userData = await fetchUserData();
         console.log(userData);
+        let data = getUserRole('jesper123', userData);
+        console.log(data);
+        // console.log(userData);
     } catch (error) {
         console.error('Fel vid hämtning av användare:', error);
     }
@@ -31,19 +34,22 @@ async function fetchDataAndLog() {
 fetchDataAndLog();
 
 
-//funktion för att hämta aktiv användaren
-function getActiveUser(userData) {
-    try {
-        return userData.users.find(user => user.isActive);
-    } catch (error) {
-        console.error('Fel vid hämtning av aktiva användaren:', error);
-    }
-}
+// //funktion för att hämta aktiv användaren
+// function getActiveUser(userData) {
+//     // console.log(typeof userData);
+//     console.log(userData);
+//     try {
+//         return userData.users.find(user => user.isActive);
+//     } catch (error) {
+//         console.error('Fel vid hämtning av aktiva användaren:', error);
+//     }
+// }
 
 
 
 //funktion för att hämta användarens role
 function getUserRole(username, userData) {
+
     try {
         const user = userData.users.find(user => user.username === username);
         if (user) {
@@ -58,22 +64,20 @@ function getUserRole(username, userData) {
 
 
 
-//funktion för att hämta beskrivning role
-function getRoleDescription(username) {
-    try {
-        const userRole = getUserRole(username, userRole);
-        switch (user.role) {
-            case 'admin':
-                return 'Administrator';
-            case 'user':
-                return 'Användaren';
-            default:
-                return 'Unknow';
-        }
-    } catch (error) {
-        console.error('Fel vid att hämta role:', error);
-    }
+// //funktion för att hämta beskrivning role (samma sak som uppe)
+// function getRoleDescription(username) {
+//     try {
+//         const userRole = getUserRole(username, userRole);
+//         switch (user.role) {
+//             case 'admin':
+//                 return 'Administrator';
+//             case 'user':
+//                 return 'Användaren';
+//             default:
+//                 return 'Unknow';
+//         }
+//     } catch (error) {
+//         console.error('Fel vid att hämta role:', error);
+//     }
 
-}
-
-
+// }
