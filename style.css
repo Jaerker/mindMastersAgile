@@ -180,7 +180,7 @@ input[type="submit"] {
     letter-spacing: -2.5px;
 }
 
-main button {
+.status button {
     width: 184px;
     height: 55px;
     margin-top: 62px;
