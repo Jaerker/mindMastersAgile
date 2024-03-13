@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="login-style.css">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img src="poster.png" class="background-image">
+    <img src="poster.png" class="background-image" >
     <div class="content-wrapper">
         <section class="body__section active" id="loginForm">
             <form class="login-form">
@@ -17,10 +18,12 @@
                 <label for="login-password">Password:</label>
                 <input type="password" id="login-password" name="password" required>
                 
-                <input type="submit" value="Login">
+                <input type="submit" value="Login" id="login-submit">
                 <button class="toggle-btn" onclick="toggleForm()">Show Registration Form</button>
-            </form>
+             </form>
+            
         </section>
+        <h1 id="login-message"></h1>
 
         <section class="body__section" id="registerForm">
             <form class="register-form">
@@ -43,6 +46,8 @@
         </section>
     </div>
 
+    
+
 
         <script>
 function toggleForm() {
@@ -52,5 +57,7 @@ function toggleForm() {
     registerForm.classList.toggle('active');
 }
         </script>
+
+<script type="module" src="./scripts/script.js"></script>
 </body>
 </html>
