@@ -10,7 +10,7 @@
   --color-dark-green: #1A4143;
   --dark-green-color: #38846D;
   --color-light-green: #D9D9D9;
-  text-transform: uppercase;
+
   --font-family1: 'PT Serif', serif;
   --font-family2: 'Work Sans', sans-serif;
 }
@@ -112,3 +112,69 @@ input[type="submit"] {
   font-size: 30px;
   align-items: center;
 }
+
+
+
+
+
+
+
+
+
+/* <-----------ABOUT PAGE START----------> */
+
+
+
+.wrapper-about {
+  background-color: var(--pink-background-color);
+  max-width: 100%;
+
+}
+
+.about-footer,
+.about-header {
+  width: 100%;
+  height: auto;
+
+
+}
+
+.about__main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about__info-text {
+  padding: 25px;
+  font-size: 14px;
+
+}
+
+.about__info-text p {
+  padding: 15px;
+  font-family: var(--font-family2);
+}
+
+.vd-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 4rem;
+}
+
+.vd-container img {
+  border-radius: 50%;
+}
+
+.vd-container p {
+  font-size: 14px;
+}
+
+.vd-container h2 {
+  font-family: 'PT serif';
+}
+
+/* <-----------ABOUT PAGE End------------> */
