@@ -25,6 +25,47 @@ body {
     height: 100vh;
 }
 
+
+/*Layzy Loader*/
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f9fb;
+  transition: opacity 0.75s, visibility 0.75s; /* rättstavning av visibility */
+}
+
+.loader-hidden { /* ändrat klassnamnet från loader-hidder till loader-hidden */
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader::after { /* ta bort mellanslaget efter .loader */
+  content: "";
+  width: 75px;
+  height: 75px;
+  border: 15px solid #dddddd;
+  border-top: 15px solid var(--color-dark-green); /* ändrat från var(--color-dark-green) till en fast färg */
+  border-radius: 50%;
+  animation: loading 0.75s ease infinite;
+}
+
+@keyframes loading {
+  fram {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+
+
 /* BACKGROUND IMAGE */
 .background-image {
     width: 100%;
