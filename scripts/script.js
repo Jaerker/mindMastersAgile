@@ -10,10 +10,10 @@ window.addEventListener('load', () => {
     loader.addEventListener('transitionend', () => { // Ta bort punkten efter "transitionend" och använd ett argument för att hantera händelsen
         document.body.removeChild(loader); // Ta bort citatet runt 'loader' och använd variabeln direkt
     });
-    
+
     document.querySelector('#menuHamburger').addEventListener('click', () => {
         const imgRef = document.querySelector('#menuHamburger');
-        
+
         imgRef.classList.toggle('menu-hamburger--open');
         imgRef.classList.toggle('menu-hamburger--closed');
         document.querySelector('#navMenu').classList.toggle('menu--hidden');
@@ -39,7 +39,7 @@ async function fetchUserData(url) {
         const response = await fetch(url);
         // Omvandla den hämtade datan till JSON-format
         return await response.json();
-    } catch(error) {
+    } catch (error) {
         // Logga ett felmeddelande om något går fel vid hämtning av användardata
         console.error('Fel vid hämtning av användardata:', error);
         // Returnera null om ett fel uppstår
@@ -71,7 +71,7 @@ async function fetchUserloginData() {
 }
 
 // Lägg till en händelselyssnare för knappen 'login-submit'
-document.getElementById('login-submit').addEventListener('click', function(event) {
+document.getElementById('login-submit').addEventListener('click', function (event) {
     // Förhindra standardformulärhantering när knappen klickas
     event.preventDefault();
     // Anropa logIn-funktionen för inloggning
