@@ -5,15 +5,23 @@ const oData = {
 }
 
 window.addEventListener('load', () => {
-    document.querySelector('#menuHamburger').addEventListener('click', ()=>{
+    const loader = document.querySelector('.loader');
+    loader.classList.add('loader-hidden'); // Ta bort punkten från "loader-hidden"
+    loader.addEventListener('transitionend', () => { // Ta bort punkten efter "transitionend" och använd ett argument för att hantera händelsen
+        document.body.removeChild(loader); // Ta bort citatet runt 'loader' och använd variabeln direkt
+    });
+    
+    document.querySelector('#menuHamburger').addEventListener('click', () => {
         const imgRef = document.querySelector('#menuHamburger');
         
         imgRef.classList.toggle('menu-hamburger--open');
         imgRef.classList.toggle('menu-hamburger--closed');
         document.querySelector('#navMenu').classList.toggle('menu--hidden');
+        // Förutsätter att 'oData' är definierat någonstans
         oData.menuIsHidden = !oData.menuIsHidden;
     });
 });
+
 
 // Vänta på att DOM ska laddas och kör sedan fetchUserloginData-funktionen
 document.addEventListener('DOMContentLoaded', async () => {
