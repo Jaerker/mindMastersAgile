@@ -1,4 +1,4 @@
-# Mötesprotokoll 2024-03-13
+# Mötesprotokoll 2024-03-14
 
 Sätt en timer på 15 minuter
 
@@ -12,11 +12,12 @@ Sätt en timer på 15 minuter
 
 ## Protokoll
 Var och en svarar på frågorna nedan, 1 person antecknar
+* Vad gjorde du igår?
 * Vad ska du göra idag?
 * Finns det några hinder?
 
 ### Fredrick 
-* Ganska klar, de andra får kolla senare.
+* Ganska klar i figma med designen, de andra får kolla senare.
 * Komplettering till förra examinationsuppgiften.
 * Inget speciellt.
 
