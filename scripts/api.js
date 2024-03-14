@@ -26,6 +26,22 @@ const user = {
         return data;
     },
 
+    details: async(username) => {
+        try{
+            const userList = await user.list();
+            const chosenUser = userList.find(x => x.username === username);
+            if(!chosenUser){
+                console.log('Användaren finns inte')
+                return false;
+            }
+            
+            return chosenUser;
+        }catch(e){
+            console.log(e);
+            return false;
+        }   
+    },
+
     add: async (userToAdd) => {
         try{
          
@@ -36,7 +52,8 @@ const user = {
 
             return true;
         }catch(e){
-            return e;
+            console.log(e);
+            return false;
         }
     },
     /**
@@ -96,7 +113,7 @@ const product = {
      */
     details: async (productId) => {
         const menu = await product.list();
-        return menu.find(x => x.id === productId);
+        return menu.find(x => x.id === productId) || false;
     },
     /**
      * 
@@ -113,6 +130,7 @@ const product = {
 
             return true;
         }catch(e){
+            console.log(e);
             return false;
         }
     },
@@ -175,13 +193,12 @@ const orderHistory = {
         }
         return data;
     },
-    add: async (orderToAdd) => {
+    add: (orderToAdd) => {
         try{
          
-            const list = await orderHistory.list();
+            const list = orderHistory.list();
             list.push(orderToAdd);
             localRequest.change('orderHistory', list);
-            // console.log(list);
             return true;
         }catch(e){
             return e;
