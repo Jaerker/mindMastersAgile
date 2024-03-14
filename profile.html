@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile page</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./index-temp-style.css">
 </head>
-<link rel="stylesheet" href="./style.css">
+
 
 <body>
 
@@ -15,8 +17,14 @@
             <img src="./Assets/graphics-header.svg" alt="">
         </header>
 
-        <nav>
-            <!-- JOHANS HAMBURGARE -->
+        <button class="menu-hamburger menu-hamburger--closed" id="menuHamburger"></button>
+        <nav class="menu menu--hidden" id="navMenu">
+            <ul class="menu__list">
+                <li class="menu__choice"><a href="./product.html" class="menu__link">Meny</a></li>
+                <li class="menu__choice"><a href="./about.html" class="menu__link">Vårt kaffe</a></li> 
+                <li class="menu__choice"><a href="./profile.html" class="menu__link">Min profil</a></li> 
+                <li class="menu__choice"><a href="./status.html" class="menu__link">Orderstatus</a></li>
+            </ul>
         </nav>
 
         <main class="profile__main-container">
@@ -87,6 +95,8 @@
 
 
     </div>
+    <script type="module" src="./script.js"></script>
+
 </body>
 
 </html>
