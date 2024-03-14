@@ -15,14 +15,14 @@
 }
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    max-width: 1200px;
-    height: 100vh;
+  max-width: 100%;
+  height: 100vh;
 }
 
 
@@ -37,20 +37,24 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #f7f9fb;
-  transition: opacity 0.75s, visibility 0.75s; /* rättstavning av visibility */
+  transition: opacity 0.75s, visibility 0.75s;
+  /* rättstavning av visibility */
 }
 
-.loader-hidden { /* ändrat klassnamnet från loader-hidder till loader-hidden */
+.loader-hidden {
+  /* ändrat klassnamnet från loader-hidder till loader-hidden */
   opacity: 0;
   visibility: hidden;
 }
 
-.loader::after { /* ta bort mellanslaget efter .loader */
+.loader::after {
+  /* ta bort mellanslaget efter .loader */
   content: "";
   width: 75px;
   height: 75px;
   border: 15px solid #dddddd;
-  border-top: 15px solid var(--color-dark-green); /* ändrat från var(--color-dark-green) till en fast färg */
+  border-top: 15px solid var(--color-dark-green);
+  /* ändrat från var(--color-dark-green) till en fast färg */
   border-radius: 50%;
   animation: loading 0.75s ease infinite;
 }
@@ -59,6 +63,7 @@ body {
   fram {
     transform: rotate(0turn);
   }
+
   to {
     transform: rotate(1turn);
   }
@@ -68,171 +73,171 @@ body {
 
 /* BACKGROUND IMAGE */
 .background-image {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 /* CONTENT WRAPPER */
 .content-wrapper {
-    max-width: 95%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+  max-width: 95%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
 /* FORM SECTION */
 .body__section {
-    background-color: rgba(53, 79, 82, 0.8);
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    padding: 20px;
-    max-width: 400px;
-    width: 70%;
-    box-sizing: border-box;
-    position: relative;
-    margin-top: -625px;
-    display: none;
+  background-color: rgba(53, 79, 82, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  max-width: 400px;
+  width: 70%;
+  box-sizing: border-box;
+  position: relative;
+  margin-top: -625px;
+  display: none;
 }
 
 /* ACTIVE FORM SECTION */
 .body__section.active {
-    display: block;
+  display: block;
 }
 
 /* LABELS */
 label {
-    display: block;
-    margin: 10px 0;
-    color: #ffffff;
+  display: block;
+  margin: 10px 0;
+  color: #ffffff;
 }
 
 /* INPUT FIELDS */
 input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: rgba(255, 255, 255, 0.1);
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* SUBMIT BUTTON */
 input[type="submit"] {
-    background-color: #38846d;
-    color: #ffffff;
-    cursor: pointer;
-    border: none;
+  background-color: #38846d;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
 }
 
 /* TOGGLE BUTTON */
 .toggle-btn {
-    background-color: #2f2926;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 10px;
-    cursor: pointer;
+  background-color: #2f2926;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
 }
 
 /* HOVER EFFECT FOR TOGGLE BUTTON */
 .toggle-btn:hover {
-    background-color: #ffffff;
-    color: #2f2926;
+  background-color: #ffffff;
+  color: #2f2926;
 }
 
 /* LOGIN MESSAGE */
 .login-message {
-    color: var(--color-white);
-    background-color: var(--color-dark);
-    padding: 1rem;
-    font-family: var(--font-family1);
-    font-size: 30px;
-    align-items: center;
+  color: var(--color-white);
+  background-color: var(--color-dark);
+  padding: 1rem;
+  font-family: var(--font-family1);
+  font-size: 30px;
+  align-items: center;
 }
 
 /*STATUS PAGE*/
 
 .status {
 
-    width: 100%;
-    height: 100%;
-    background-color: var(--red-color);
-    color: var(--color-white);
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: var(--red-color);
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
 
-    align-items: center;
-    text-align: center;
-    font-family: var(--font-family1);
-    text-transform: none;
+  align-items: center;
+  text-align: center;
+  font-family: var(--font-family1);
+  text-transform: none;
 }
 
 .status p {
-    width: 279px;
-    height: 37px;
-    margin-top: 62px;
-    font-family: var(--font-family2);
-    font-size: 16px;
-    text-align: center;
-    letter-spacing: 2px;
-    color: var(--color-light-green);
+  width: 279px;
+  height: 37px;
+  margin-top: 62px;
+  font-family: var(--font-family2);
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 2px;
+  color: var(--color-light-green);
 }
 
 .status p strong {
-    letter-spacing: -0.1px;
+  letter-spacing: -0.1px;
 }
 
 .status section {
-    margin-top: 40px;
-    width: 216.29px;
-    height: 119.06px;
+  margin-top: 40px;
+  width: 216.29px;
+  height: 119.06px;
 }
 
 .status h1 {
-    width: 279px;
-    height: 100px;
-    margin-top: 62px;
-    font-size: var(--font-family1);
-    font-size: 36px;
-    font-weight: 600;
-    text-align: center;
+  width: 279px;
+  height: 100px;
+  margin-top: 62px;
+  font-size: var(--font-family1);
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
 
 }
 
 .status #estimatedTime {
-    width: 279px;
-    height: 37px;
-    margin-top: 20px;
-    font-family: var(--font-family2);
-    font-size: 20px;
-    font-weight: 300;
-    text-align: center;
-    color: var(--color-white);
-    letter-spacing: 1.3px;
+  width: 279px;
+  height: 37px;
+  margin-top: 20px;
+  font-family: var(--font-family2);
+  font-size: 20px;
+  font-weight: 300;
+  text-align: center;
+  color: var(--color-white);
+  letter-spacing: 1.3px;
 }
 
 .status #estimatedTime strong {
-    font-size: 21px;
-    font-weight: 800;
-    letter-spacing: -2.5px;
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -2.5px;
 }
 
 .status button {
-    width: 184px;
-    height: 55px;
-    margin-top: 62px;
-    border: none;
-    border-radius: 50px;
-    background-color: var(--color-white);
-    font-family: var(--font-family1);
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 28.8px;
-    text-align: center;
-    letter-spacing: 0.2px;
+  width: 184px;
+  height: 55px;
+  margin-top: 62px;
+  border: none;
+  border-radius: 50px;
+  background-color: var(--color-white);
+  font-family: var(--font-family1);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28.8px;
+  text-align: center;
+  letter-spacing: 0.2px;
 }
 
 /* <-----------ABOUT PAGE START----------> */
@@ -288,3 +293,96 @@ input[type="submit"] {
 
 /* <-----------ABOUT PAGE End------------> */
 
+/* <----------PROFILE PAGE START---------> */
+.profilePage {
+  background-color: var(--dark-brown);
+}
+
+.profile__changeImg,
+.profile__changePassword {
+  text-decoration: none;
+  color: var(--red-color);
+  font-weight: 700;
+  padding: 10px;
+}
+
+.profile__changePassword:hover {
+  color: var(--color-green);
+}
+
+.profile__changeImg:hover {
+  color: var(--color-green);
+}
+
+.wrapper-profile {
+  max-width: 100%;
+  color: var(--color-white);
+  font-family: var(--font-family1);
+}
+
+
+
+.profile-header {
+  width: 100%;
+  height: auto;
+}
+
+.profile__user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profileImg {
+  padding: 10px;
+}
+
+.profile__heading {
+  padding: 5px;
+  font-size: 24px;
+}
+
+.profile__OrderHistory {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.profile__heading {
+  display: flex;
+  justify-content: left;
+}
+
+.idAndDate {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 15px 0px 15px;
+  font-size: 14px;
+  opacity: 0.5;
+  margin-top: 10px;
+}
+
+.totalAndPrice {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 15px 0px 15px;
+  font-size: 14px;
+  opacity: 0.5;
+}
+
+.orderTotal {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 15px 0px 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+hr {
+  width: 90%;
+  margin: auto;
+}
+
+
+/* <----------PROFILE PAGE END-----------> */

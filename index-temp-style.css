@@ -1,9 +1,8 @@
-
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 
 
-*{
+* {
     margin: 0;
     padding: 0;
 
@@ -93,26 +92,26 @@
     gap: 1.5rem;
 }
 
-.menu-hamburger{
-    z-index:2;
-    position:fixed;
-    top:10px;
-    left:10px;
-    width:50px;
-    height:50px;
-    border-style:none;
-    border-radius:50%;
-    background:#FFFFFF;
+.menu-hamburger {
+    z-index: 2;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    border-style: none;
+    border-radius: 50%;
+    background: #FFFFFF;
     background-size: 25px;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.menu-hamburger--open{
+.menu-hamburger--open {
     background-image: url('Assets/close.svg');
 }
 
-.menu-hamburger--closed{
+.menu-hamburger--closed {
     background-image: url('Assets/navicon.svg');
 }
 
