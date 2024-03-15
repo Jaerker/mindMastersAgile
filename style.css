@@ -300,6 +300,8 @@ input[type="submit"] {
 
 .profile__changeImg,
 .profile__changePassword {
+  background:transparent;
+  border-style:none;
   text-decoration: none;
   color: var(--red-color);
   font-weight: 700;
@@ -334,8 +336,10 @@ input[type="submit"] {
   align-items: center;
 }
 
-.profileImg {
-  padding: 10px;
+.profile__picture{
+  width:100px;
+  border-radius:50%;
+
 }
 
 .profile__heading {
