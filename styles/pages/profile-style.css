@@ -7,6 +7,8 @@
   
   .profile__changeImg,
   .profile__changePassword {
+    border-style:none;
+    background:transparent;
     text-decoration: none;
     color: var(--red-color);
     font-weight: 700;
@@ -41,8 +43,9 @@
     align-items: center;
   }
   
-  .profileImg {
-    padding: 10px;
+  .profile__picture {
+    border-radius:50%;
+    width:97px;
   }
   
   .profile__heading {
