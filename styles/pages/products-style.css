@@ -1,13 +1,9 @@
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #F3E4E1;
+@import url('../root.css');
+body{
+    background: var(--pink-background-color);
 }
-
 .products__wrapper {
-
-    max-width: 100%;
-    min-height: 100vh;
+    height:inherit;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -24,24 +20,6 @@ h1 {
     font-weight: bold;
 }
 
-/* HEADER SECTION */
-
-header,
-footer {
-    position: relative;
-    width: 100vw;
-}
-
-header img {
-    width: 100%;
-    height: auto;
-}
-
-footer img {
-    width: 100vw;
-    height: auto;
-}
-/* PRODUCTS SECTION */
 
 
 .products {

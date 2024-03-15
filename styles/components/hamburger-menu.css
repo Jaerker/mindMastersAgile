@@ -8,8 +8,8 @@
     height: 50px;
     border-style: none;
     border-radius: 50%;
-    background: #FFFFFF;
-    background-size: 25px;
+    background: var(--color-white);
+    /* background-size: 25px; */
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -25,7 +25,7 @@
 .menu {
     position: fixed;
     top: 0;
-    background: #2F2926;
+    background: var(--dark-brown);
     width: 100vw;
     height: 100vh;
     z-index: 1;
@@ -57,18 +57,18 @@
     height: 50px;
     border-style: none;
     border-radius: 50%;
-    background: #FFFFFF;
+    background: var(--color-white);
     background-size: 25px;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .menu-hamburger--open {
-    background-image: url('Assets/close.svg');
+    background-image: url('../../Assets/close.svg');
 }
 
 .menu-hamburger--closed {
-    background-image: url('Assets/navicon.svg');
+    background-image: url('../../Assets/navicon.svg');
 }
 
 .menu__choice {
