@@ -5,27 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Page</title>
-    <link rel="stylesheet" href="prodPageStyles.css">
+    <link rel="stylesheet" href="./styles/pages/products-style.css">
 </head>
 
 <body>
     <div class="products__wrapper">
 
         <header>
-            <img src="./Assets/graphics-header.svg" alt="header - leafs">
+            <img class="header__image" src="./Assets/graphics-header.svg" alt="header - leafs">
             <button class="menu-hamburger menu-hamburger--closed" id="menuHamburger"></button>
+            <nav class="menu menu--hidden" id="navMenu">
+                <ul class="menu__list">
+                    <li class="menu__choice"><a href="./products.html" class="menu__link">Meny</a></li>
+                    <li class="menu__choice"><a href="./about.html" class="menu__link">Vårt kaffe</a></li>
+                    <li class="menu__choice"><a href="./profile.html" class="menu__link">Min profil</a></li>
+                    <li class="menu__choice"><a href="./status.html" class="menu__link">Orderstatus</a></li>
+                </ul>
+            </nav>
         </header>
 
 
-
-        <nav class="menu menu--hidden" id="navMenu">
-            <ul class="menu__list">
-                <li class="menu__choice"><a href="./productPage.html" class="menu__link">Meny</a></li>
-                <li class="menu__choice"><a href="./about.html" class="menu__link">Vårt kaffe</a></li>
-                <li class="menu__choice"><a href="./profile.html" class="menu__link">Min profil</a></li>
-                <li class="menu__choice"><a href="./status.html" class="menu__link">Orderstatus</a></li>
-            </ul>
-        </nav>
 
         <section class="products">
             <h1 class="products__title">Meny</h1>
@@ -110,7 +109,7 @@
         </section>
 
         <footer>
-            <img src="./Assets/graphics-footer.svg" alt="footer - leafs">
+            <img class="footer__img"src="./Assets/graphics-footer.svg" alt="footer - leafs">
         </footer>
     </div>
     <div class="loader"></div>

@@ -1,47 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
-
-
-* {
-    margin: 0;
-    padding: 0;
-
-}
-
-.darkgreen-bg-color {
-    background: #38846D;
-}
-
-.bg-images {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-}
-
-.bg-images__leaves {
-    height: 100%;
-    position: absolute;
-    top: 0;
-}
-
-.bg-images__leaves--right {
-    right: 0;
-}
-
-.bg-images__leaves--left {
-    left: 0;
-}
-
-.company-logo {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-
-}
 
 .menu-hamburger {
     z-index: 2;
@@ -52,8 +8,8 @@
     height: 50px;
     border-style: none;
     border-radius: 50%;
-    background: #FFFFFF;
-    background-size: 25px;
+    background: var(--color-white);
+    /* background-size: 25px; */
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -69,7 +25,7 @@
 .menu {
     position: fixed;
     top: 0;
-    background: #2F2926;
+    background: var(--dark-brown);
     width: 100vw;
     height: 100vh;
     z-index: 1;
@@ -101,18 +57,18 @@
     height: 50px;
     border-style: none;
     border-radius: 50%;
-    background: #FFFFFF;
+    background: var(--color-white);
     background-size: 25px;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .menu-hamburger--open {
-    background-image: url('Assets/close.svg');
+    background-image: url('../../Assets/close.svg');
 }
 
 .menu-hamburger--closed {
-    background-image: url('Assets/navicon.svg');
+    background-image: url('../../Assets/navicon.svg');
 }
 
 .menu__choice {
