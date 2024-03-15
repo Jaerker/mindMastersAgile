@@ -1,15 +1,24 @@
-
+import api from './api.js';
 
 const oData = {
     menuIsHidden: false
 }
 
-window.addEventListener('load', () => {
+window.addEventListener('load', async () => {
+
+
+    await api.user.list();
+    await api.product.list();
+    api.user.login('bergwallz');
+    api.orderHistory.list();
+
+
     const loader = document.querySelector('.loader');
-    loader.classList.add('loader-hidden'); // Ta bort punkten från "loader-hidden"
-    loader.addEventListener('transitionend', () => { // Ta bort punkten efter "transitionend" och använd ett argument för att hantera händelsen
-        document.body.removeChild(loader); // Ta bort citatet runt 'loader' och använd variabeln direkt
-    });
+        loader.classList.add('loader-hidden'); // Ta bort punkten från "loader-hidden"
+        loader.addEventListener('transitionend', () => { // Ta bort punkten efter "transitionend" och använd ett argument för att hantera händelsen
+            document.body.removeChild(loader); // Ta bort citatet runt 'loader' och använd variabeln direkt
+        });
+
 
     document.querySelector('#menuHamburger').addEventListener('click', () => {
         const imgRef = document.querySelector('#menuHamburger');

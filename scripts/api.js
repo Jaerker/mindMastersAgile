@@ -1,5 +1,6 @@
 const productApi = 'https://santosnr6.github.io/Data/airbeanproducts.json';
 const userApi = 'https://santosnr6.github.io/Data/airbeanusers.json';
+const randomApi = (num) => `https://randomuser.me/api/portraits/men/${num}.jpg`;
 
 const apiRequest = {
     get: async (url) => await fetch(`${url}`).then(response => response.json()).catch(exception => {return {error:exception}})
@@ -206,10 +207,15 @@ const orderHistory = {
     },
 }
 
+const profileImage = {
+    getRandom: () =>  randomApi(Math.floor(Math.random()*100))
+}
+
 const api = {
     user,
     product,
-    orderHistory
+    orderHistory,
+    profileImage
 }
 
 
