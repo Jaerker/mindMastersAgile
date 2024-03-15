@@ -1,0 +1,52 @@
+@import url("../root.css");
+
+
+.wrapper-about {
+    background-color: var(--pink-background-color);
+    max-width: 100%;
+  }
+  
+  .about-footer,
+  .about-header {
+    width: 100%;
+    height: auto;
+  }
+  
+  .about__main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .about__info-text {
+    padding: 25px;
+    font-size: 14px;
+  
+  }
+  
+  .about__info-text p {
+    padding: 15px;
+    font-family: var(--font-family2);
+  }
+  
+  .vd-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 4rem;
+  }
+  
+  .vd-container img {
+    border-radius: 50%;
+  }
+  
+  .vd-container p {
+    font-size: 14px;
+  }
+  
+  .vd-container h2 {
+    font-family: 'PT serif';
+  }
+  

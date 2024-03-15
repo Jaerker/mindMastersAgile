@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile page</title>
+    <link rel="stylesheet" href="./styles/pages/profile-style.css">
+</head>
+
+
+<body class="profilePage">
+
+    <div class="wrapper-profile">
+        <header>
+            <img class="profile-header" src="./Assets/graphics-header.svg" alt="">
+
+            <button class="menu-hamburger menu-hamburger--closed" id="menuHamburger"></button>
+            <nav class="menu menu--hidden" id="navMenu">
+                <ul class="menu__list">
+                    <li class="menu__choice"><a href="./products.html" class="menu__link">Meny</a></li>
+                    <li class="menu__choice"><a href="./about.html" class="menu__link">Vårt kaffe</a></li>
+                    <li class="menu__choice"><a href="./profile.html" class="menu__link">Min profil</a></li>
+                    <li class="menu__choice"><a href="./status.html" class="menu__link">Orderstatus</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+
+
+        <main class="profile__main-container">
+
+            <section class="profile__user-info">
+                <img id="profileImg" class="profile__picture" src="./Assets/profile.svg" alt="profile picture"><br>
+                <button class="profile__changeImg" id="changeImg">Byt profilbild</button>
+
+                <h3 id="profileName" class="profile__heading">Sixten Kaffelövèr</h3>
+                <p id="profileEmail">sixten.kaffelover@zoocom.se</p>
+                <button class="profile__changePassword" id="changePassword">Byt lösenord</button>
+            </section>
+
+
+            <h3 id="orderHeading" class="profile__OrderHistory">Orderhistorik</h3>
+
+            <ul id="orderHistory" class="profile__list">
+                <li class="profile__list-item">
+                    <div class="idAndDate">
+                        <strong>
+                            <p class="orderId-bold">#AB1123282323Z</p>
+                        </strong>
+                        <p>20/03/06</p>
+                    </div>
+                    <div class="totalAndPrice">
+                        <p>total ordersumma </p>
+                        <p>443 kr</p>
+                    </div>
+                </li>
+                <br>
+                <hr>
+
+
+                <li class="profile__list-item">
+                    <div class="idAndDate">
+                        <strong>
+                            <p class="orderId-bold">#AB1128382323X</p>
+                        </strong>
+                        <p>20/03/03</p>
+                    </div>
+                    <div class="totalAndPrice">
+                        <p>total ordersumma </p>
+                        <p>333 kr</p>
+                    </div>
+                </li>
+                <br>
+                <hr>
+
+                <li class="profile__list-item">
+                    <div class="idAndDate">
+                        <strong>
+                            <p class="orderId-bold">#AB1444482323X</p>
+                        </strong>
+                        <p>20/02/21</p>
+                    </div>
+                    <div class="totalAndPrice">
+                        <p>total ordersumma </p>
+                        <p>893 kr</p>
+                    </div>
+                </li>
+                <br>
+                <hr>
+
+                <li class="profile__list-item">
+                    <div class="orderTotal">
+                        <strong>
+                            <p class="orderId-bold">Totalt spenderat</p>
+                        </strong>
+                        <strong>
+                            <p>1669 kr</p>
+                        </strong>
+                    </div>
+
+                </li>
+            </ul>
+        </main>
+
+        <footer>
+            <!-- INGET ATT HA MED ÄNNU -->
+        </footer>
+    </div>
+    <div class="loader"></div>
+
+    <script type="module" src="./scripts/script.js"></script>
+    <script type="module" src="./scripts/profilePage.js"></script>
+
+</body>
+
+</html>
