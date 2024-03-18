@@ -85,3 +85,16 @@ input[type="submit"] {
   font-size: 30px;
   align-items: center;
 }
+
+@keyframes flyUp {
+  0% {
+      transform: translateY(0);
+  }
+  100% {
+      transform: translateY(-50px); /* Justera detta värde efter behov */
+  }
+}
+
+.startAnimation{
+  animation: flyUp 1s ease-in-out infinite alternate; /* Lägg till infinite och alternate för att få animationen att upprepas fram och tillbaka */
+}

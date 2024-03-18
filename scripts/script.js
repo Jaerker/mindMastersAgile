@@ -113,17 +113,3 @@ function logIn() {
     loginMessage.textContent = 'Inloggning misslyckades. \n Kontrollera användarnamn och lösenord: ' + usernameInput;
     loginMessage.classList.add('login-message'); // Lägg till klass för meddelandetext
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
