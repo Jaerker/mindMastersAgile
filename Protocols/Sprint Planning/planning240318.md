@@ -11,3 +11,4 @@
 * Fortsätta med sista punkterna 
 * Se till att sammanställa allt så att det fungerar enhetligt.
 
+### Fokus på funktionalitet, INTE DESIGN! 
