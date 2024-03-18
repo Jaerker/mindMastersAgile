@@ -226,12 +226,102 @@ const orderHistory = {
 const profileImage = {
     getRandom: () =>  randomApi(Math.floor(Math.random()*100))
 }
+//Hur ser cart ut?
+/*
+FÖRSLAG: 
+[
+    {
+        id: PRODUCTID
+        productInfo: KOPIA AV PRODUCT OBJEKT
+        amount: ANTAL
+    },
+    {
+        id: PRODUCTID
+        productInfo: KOPIA AV PRODUCT OBJEKT
+        amount: ANTAL
+    }
+] 
+*/
+const cart = {
+    list: () => {
+        const data = localRequest.get('cart');
+        if(!data){    
+            localRequest.change('cart', []);
+            return localRequest.get('cart');
+        }
+
+        return data;
+    },
+    add: async (productId) => {
+        if(productId || productId>=0){
+            const list = cart.list();
+
+            let found = false;
+            list.forEach(element => {
+                if(element.id === productId){
+                    element.amount +=1;
+                    found = true;
+                }
+            });
+            if(!found){
+                const productInfo = await product.details(productId);
+                if(!productInfo){
+                    return false;
+                }
+                list.push({id:productId, productInfo: productInfo, amount:1});
+            }
+            localRequest.change('cart', list);
+            return true;
+        }
+        return false;
+    },
+    remove: (productId) => {
+        let list = cart.list();
+        let found = false;
+        let emptyElement = -1;
+        list.forEach(element => {
+            if(element.id === productId){
+
+                element.amount -=1;
+                found = true;
+
+                if(element.amount === 0){
+                    emptyElement = element.id;
+                }
+            }
+
+        });
+        if(!found){
+            return false;
+        }
+        if(emptyElement !== -1){
+            list = list.filter(x => x.id !== emptyElement);
+        }
+        localRequest.change('cart', list);
+        return true;
+
+    },
+    itemCounter: () => {
+        const items = cart.list();
+        if(items.length<=0){
+            return 0;
+        }
+        else{
+            let counter = 0;
+            items.forEach(item => {
+                counter +=item.amount;
+            });
+            return counter;
+        }
+    }
+}
 
 const api = {
     user,
     product,
     orderHistory,
-    profileImage
+    profileImage,
+    cart
 }
 
 
