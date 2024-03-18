@@ -2,6 +2,7 @@
 
 .status {
 
+    padding: 2rem;
     width: 100%;
     height: 100%;
     background-color: var(--red-color);
@@ -50,25 +51,27 @@
   .status #estimatedTime {
     width: 279px;
     height: 37px;
-    margin-top: 20px;
     font-family: var(--font-family2);
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 300;
     text-align: center;
     color: var(--color-white);
     letter-spacing: 1.3px;
   }
   
-  .status #estimatedTime strong {
-    font-size: 21px;
+  .estimatedTime {
+    margin: auto;
+    font-size: 30px;
     font-weight: 800;
-    letter-spacing: -2.5px;
+
+    padding: 1rem;
+    
   }
   
   .status button {
+    margin: auto;
     width: 184px;
     height: 55px;
-    margin-top: 62px;
     border: none;
     border-radius: 50px;
     background-color: var(--color-white);
@@ -77,5 +80,17 @@
     font-weight: 700;
     line-height: 28.8px;
     text-align: center;
+    align-items: center;
     letter-spacing: 0.2px;
   }
+
+  .droneImg  {
+    margin: auto;
+
+  }
+  .deliveyMsg {
+ margin: auto;
+  }
+
+ 
+
