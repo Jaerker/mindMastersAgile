@@ -282,6 +282,7 @@ const cart = {
             list = list.filter(x => x.id !== emptyElement);
         }
         localRequest.change('cart', list);
+        return true;
 
     },
     itemCounter: () => {
