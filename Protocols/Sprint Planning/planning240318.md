@@ -8,5 +8,6 @@
 * Jacob
 
 ## Protokoll
-Sammanfatta vad ni diskuterat, vad ni kommit fram till, beslut som tagits med mera.
+* Fortsätta med sista punkterna 
+* Se till att sammanställa allt så att det fungerar enhetligt.
 

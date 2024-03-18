@@ -15,8 +15,6 @@ Var och en svarar på frågorna nedan, 1 person antecknar
 * Vad ska du göra idag?
 * Finns det några hinder?
 
-Nytt upplägg: Alla får skriva i var för sig i filen så det blir mer korrekt information? 
-
 ### Fredrick 
 #### Vad gjorde du igår?
 > 

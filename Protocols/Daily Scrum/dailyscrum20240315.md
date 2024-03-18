@@ -33,12 +33,7 @@ Var och en svarar på frågorna nedan, 1 person antecknar
 > förstår inte  login funktionen riktigt än
 
 ### Jacob
-#### Vad gjorde du igår?
-> 
-#### Vad ska du göra idag?
-> 
-#### Finns det några hinder?
-> 
+> Tekniskt strul
 
 ### Johan
 #### Vad gjorde du igår?
