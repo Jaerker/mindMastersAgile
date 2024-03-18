@@ -181,6 +181,7 @@ const product = {
 
 const orderHistory = {
     list: () => {
+        
         const data = localRequest.get('orderHistory');
         if(!data){    
             localRequest.change('orderHistory', []);
@@ -195,6 +196,9 @@ const orderHistory = {
         return data;
     },
     add: (orderToAdd) => {
+        if(!orderToAdd){
+            return false;
+        }
         try{
          
             const list = orderHistory.list();
@@ -205,6 +209,18 @@ const orderHistory = {
             return e;
         }
     },
+    getSum: () => {
+        const data = orderHistory.list();
+
+        if(!data || !user.getCurrentUser()){
+            return 0;
+        }
+        let counter = 0;
+        data.forEach(item => {counter += item.totalSum});
+
+        return counter;
+
+    }
 }
 
 const profileImage = {

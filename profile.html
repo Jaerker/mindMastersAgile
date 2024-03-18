@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile page</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./index-temp-style.css">
+    <link rel="stylesheet" href="./styles/pages/profile-style.css">
 </head>
 
 
@@ -21,7 +20,7 @@
         <button class="menu-hamburger menu-hamburger--closed" id="menuHamburger"></button>
         <nav class="menu menu--hidden" id="navMenu">
             <ul class="menu__list">
-                <li class="menu__choice"><a href="./productPage.html" class="menu__link">Meny</a></li>
+                <li class="menu__choice"><a href="./products.html" class="menu__link">Meny</a></li>
                 <li class="menu__choice"><a href="./about.html" class="menu__link">Vårt kaffe</a></li>
                 <li class="menu__choice"><a href="./profile.html" class="menu__link">Min profil</a></li>
                 <li class="menu__choice"><a href="./status.html" class="menu__link">Orderstatus</a></li>
@@ -43,63 +42,8 @@
             <h3 id="orderHeading" class="profile__OrderHistory">Orderhistorik</h3>
 
             <ul id="orderHistory" class="profile__list">
-                <li class="profile__list-item">
-                    <div class="idAndDate">
-                        <strong>
-                            <p class="orderId-bold">#AB1123282323Z</p>
-                        </strong>
-                        <p>20/03/06</p>
-                    </div>
-                    <div class="totalAndPrice">
-                        <p>total ordersumma </p>
-                        <p>443 kr</p>
-                    </div>
-                </li>
-                <br>
-                <hr>
+                
 
-
-                <li class="profile__list-item">
-                    <div class="idAndDate">
-                        <strong>
-                            <p class="orderId-bold">#AB1128382323X</p>
-                        </strong>
-                        <p>20/03/03</p>
-                    </div>
-                    <div class="totalAndPrice">
-                        <p>total ordersumma </p>
-                        <p>333 kr</p>
-                    </div>
-                </li>
-                <br>
-                <hr>
-
-                <li class="profile__list-item">
-                    <div class="idAndDate">
-                        <strong>
-                            <p class="orderId-bold">#AB1444482323X</p>
-                        </strong>
-                        <p>20/02/21</p>
-                    </div>
-                    <div class="totalAndPrice">
-                        <p>total ordersumma </p>
-                        <p>893 kr</p>
-                    </div>
-                </li>
-                <br>
-                <hr>
-
-                <li class="profile__list-item">
-                    <div class="orderTotal">
-                        <strong>
-                            <p class="orderId-bold">Totalt spenderat</p>
-                        </strong>
-                        <strong>
-                            <p>1669 kr</p>
-                        </strong>
-                    </div>
-
-                </li>
             </ul>
         </main>
 
@@ -109,7 +53,7 @@
     </div>
 
 
-    <script type="module" src="./scripts/script.js"></script>
+    <script type="module" src="./scripts/profilePage.js"></script>
     <script src="./scripts/status.js"></script>
 
 </body>
