@@ -64,7 +64,7 @@
     justify-content: left;
   }
   
-  .idAndDate {
+  .id-and-date {
     display: flex;
     justify-content: space-between;
     padding: 0px 15px 0px 15px;
@@ -72,8 +72,16 @@
     opacity: 0.5;
     margin-top: 10px;
   }
-  
-  .totalAndPrice {
+  .order-id-bold{
+    font-weight: bold;
+  }
+  .order-history__empty{
+    font-weight:bold;
+    text-align: center;
+    font-size: 1.5rem;
+    
+  }
+  .total-and-price {
     display: flex;
     justify-content: space-between;
     padding: 0px 15px 0px 15px;
@@ -81,7 +89,7 @@
     opacity: 0.5;
   }
   
-  .orderTotal {
+  .order-total {
     display: flex;
     justify-content: space-between;
     padding: 0px 15px 0px 15px;
