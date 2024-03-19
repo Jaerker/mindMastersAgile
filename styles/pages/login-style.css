@@ -1,21 +1,30 @@
 @import url("../root.css");
 
 /* BACKGROUND IMAGE */
-body{
-    background:var(--dark-green-color);
+body {
+  background: var(--dark-green-color);
+  width: 100%;
+  height: 100vh;
+
 }
-.background-image{
-    width:100%;
-    height:100%;
+
+.background-image {
+  background-image: url(../../Assets/landing.svg);
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
+
 /* CONTENT WRAPPER */
 .content-wrapper {
-  max-width: 95%;
+  max-width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
+  width: fit-content;
 }
 
 /* FORM SECTION */
@@ -24,8 +33,8 @@ body{
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   padding: 20px;
-  max-width: 400px;
-  width: 70%;
+
+  width: 80%;
   box-sizing: border-box;
   position: relative;
   margin-top: -625px;
@@ -85,19 +94,22 @@ input[type="submit"] {
   background-color: var(--color-dark);
   padding: 1rem;
   font-family: var(--font-family1);
-  font-size: 30px;
-  align-items: center;
+  font-size: 14px;
+  text-align: center;
 }
 
 @keyframes flyUp {
   0% {
-      transform: translateY(0);
+    transform: translateY(0);
   }
+
   100% {
-      transform: translateY(-50px); /* Justera detta värde efter behov */
+    transform: translateY(-50px);
+    /* Justera detta värde efter behov */
   }
 }
 
-.startAnimation{
-  animation: flyUp 1s ease-in-out infinite alternate; /* Lägg till infinite och alternate för att få animationen att upprepas fram och tillbaka */
+.startAnimation {
+  animation: flyUp 1s ease-in-out infinite alternate;
+  /* Lägg till infinite och alternate för att få animationen att upprepas fram och tillbaka */
 }
