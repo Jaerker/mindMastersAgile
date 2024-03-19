@@ -1,0 +1,103 @@
+@import url("../root.css");
+
+/* BACKGROUND IMAGE */
+body{
+    background:var(--dark-green-color);
+}
+.background-image{
+    width:100%;
+    height:100%;
+}
+/* CONTENT WRAPPER */
+.content-wrapper {
+  max-width: 95%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* FORM SECTION */
+.body__section {
+  background-color: rgba(53, 79, 82, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  max-width: 400px;
+  width: 70%;
+  box-sizing: border-box;
+  position: relative;
+  margin-top: -625px;
+  display: none;
+}
+
+/* ACTIVE FORM SECTION */
+.body__section.active {
+  display: block;
+}
+
+/* LABELS */
+label {
+  display: block;
+  margin: 10px 0;
+  color: #ffffff;
+}
+
+/* INPUT FIELDS */
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* SUBMIT BUTTON */
+input[type="submit"] {
+  background-color: #38846d;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+}
+
+/* TOGGLE BUTTON */
+.toggle-btn {
+  background-color: #2f2926;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* HOVER EFFECT FOR TOGGLE BUTTON */
+.toggle-btn:hover {
+  background-color: #ffffff;
+  color: #2f2926;
+}
+
+/* LOGIN MESSAGE */
+.login-message {
+  color: var(--color-white);
+  background-color: var(--color-dark);
+  padding: 1rem;
+  font-family: var(--font-family1);
+  font-size: 30px;
+  align-items: center;
+}
+
+@keyframes flyUp {
+  0% {
+      transform: translateY(0);
+  }
+  100% {
+      transform: translateY(-50px); /* Justera detta värde efter behov */
+  }
+}
+
+.startAnimation{
+  animation: flyUp 1s ease-in-out infinite alternate; /* Lägg till infinite och alternate för att få animationen att upprepas fram och tillbaka */
+}

@@ -4,6 +4,10 @@ import setupLoader from './lazyLoader.js';
 
 window.addEventListener('load', async () => {
 
+    if(!api.user.getCurrentUser()){
+        location.href = '/login.html';
+    }
+
     api.user.login('bergwallz');
 
     setupHamburger();
