@@ -4,13 +4,9 @@
 .wrapper-about {
     background-color: var(--pink-background-color);
     max-width: 100%;
+    min-height:100vh;
   }
   
-  .about-footer,
-  .about-header {
-    width: 100%;
-    height: auto;
-  }
   
   .about__main-container {
     display: flex;

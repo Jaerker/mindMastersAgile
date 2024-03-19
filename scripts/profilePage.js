@@ -8,7 +8,7 @@ window.addEventListener('load', async () => {
         location.href = '/login.html';
     }
 
-    api.user.login('bergwallz');
+    // api.user.login('bergwallz');
 
     setupHamburger();
     setupLoader();
@@ -30,6 +30,8 @@ window.addEventListener('load', async () => {
         profileImgRef.setAttribute('src', newProfileImage);                     //Ändra bilden på hemsidan för profilen
         await api.user.change(userToChange);                                    //Skicka tillbaka ändringen på användaren
     });
+
+
 
     getOrderHistory();
 
@@ -100,7 +102,6 @@ function createOrderHistoryElement(historyItem, classList = []){
     listElement.classList.add(classList);
     }
     let sectionElement = document.createElement('section');
-    console.log(typeof(historyItem));
     if(typeof(historyItem) === 'object'){
 
         sectionElement.classList.add('id-and-date');

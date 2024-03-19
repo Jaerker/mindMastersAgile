@@ -6,12 +6,26 @@ const oData = {
 
 window.addEventListener('load', async () => {
 
+    //Dessa är här om man inte har någon info i localStorage, så man uppdaterar den korrekt!
+    // await api.user.list();
+    // await api.product.list();
+    api.user.login('jesper123');
+    // api.orderHistory.list();
 
-    await api.user.list();
-    await api.product.list();
-    api.user.login('bergwallz');
-    api.orderHistory.list();
+    const currentUser = await api.user.details(api.user.getCurrentUser());
+    if(currentUser.role === 'admin'){
+        const menuListRef = document.querySelector('#menuList');
 
+        const listItemElement = document.createElement('li');
+        const anchorElement = document.createElement('a');
+
+        listItemElement.classList.add('menu__choice');
+        anchorElement.classList.add('menu__link');
+        anchorElement.href = './dashboard.html';
+        anchorElement.textContent = 'Dashboard';
+        listItemElement.append(anchorElement);
+        menuListRef.append(listItemElement);
+    }
 
     const loader = document.querySelector('.loader');
         loader.classList.add('loader-hidden'); // Ta bort punkten från "loader-hidden"
