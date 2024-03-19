@@ -6,18 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Page</title>
 </head>
-<link rel="stylesheet" href="./styles/pages/order-style.css">
-<script src="https://kit.fontawesome.com/78900e0811.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./index-temp-style.css">
 
-<body class="orderBody">
+<body>
 
-    <div class="order-wrapper">
-        <!-- JOHANS NAVIGATIONSMENY -->
-        <header>
-            <img class="orderPage__header" src="./Assets/graphics-header.svg" alt="Header Leafs">
-        </header>
-
-
+    <div class="wrapper"></div>
+    <!-- JOHANS NAVIGATIONSMENY -->
+    <header>
+        <img src="./Assets/graphics-header.svg" alt="Header Leafs">
+        
         <button class="menu-hamburger menu-hamburger--closed" id="menuHamburger"></button>
         <nav class="menu menu--hidden" id="navMenu">
             <ul class="menu__list">
@@ -26,78 +24,78 @@
                 <li class="menu__choice"><a href="./profile.html" class="menu__link">Min profil</a></li>
                 <li class="menu__choice"><a href="./status.html" class="menu__link">Orderstatus</a></li>
             </ul>
-        </nav>
+        </nav></header>
 
 
-        <main class="orderPage__main-container">
-
-            <dialog class="dialog-open" open>
 
 
-                <h1 class="orderPage__title"> Din beställning</h1>
+
+    <main class="orderPage__main-container">
+        <h1 class="orderPage__title"> Din beställning</h1>
+        <br>
+        <br>
+
+        <ul class="orderPage__order">
+            <li class="orderPage__order-list">
+                <h3 class="orderPage__sub-heading">Bryggkaffe...........................</h3>
+                <img src="./Assets/arrow-up.svg" alt="Beskrivning av SVG" width="10" height="10">
+                <p class="order__quantity">2</p><img src="./Assets/arrow-down.svg" alt="Beskrivning av SVG" width="10"
+                    height="10">
+                <p>98 kr</p>
                 <br>
                 <br>
+            </li>
 
-                <ul class="orderPage__order">
-                    <li class="orderPage__order-list">
-                        <div class="test-flex">
-                            <h3 class="orderPage__sub-heading">Bryggkaffe<span class="dotted-line">. . . . . . . . . .
-                                </span>
-                            </h3>
-                            <p class="order__quantity"><i class="fa-solid fa-circle-minus"></i><span
-                                    id="quantity">2</span></i><i class="fa-solid fa-circle-plus"></i>
-                        </div>
-                        <p>98 kr</p>
-                        <br>
-                        <br>
-                    </li>
-
-                    <li class="orderPage__order-list">
-                        <div class="test-flex">
-                            <h3 class="orderPage__sub-heading">Caffè Doppio<span class="dotted-line">. . . . . . .
-                                    .</span>
-                            </h3>
-                            <p class="order__quantity"><i class="fa-solid fa-circle-minus"></i><span
-                                    id="quantity">1</span></i><i class="fa-solid fa-circle-plus"></i>
-                        </div>
-                        <p class="order__quantity">49 kr</p>
-                        <br>
-                        <br>
-                    </li>
-
-                    <li class="orderPage__order-list">
-                        <div class="test-flex">
-                            <h3 class="orderPage__sub-heading">Cappuccino<span class="dotted-line">. . . . . . . . . .
-                                </span>
-                            </h3>
-
-
-                            <p class="order__quantity"><i class="fa-solid fa-circle-minus"></i><span
-                                    id="quantity">4</span></i><i class="fa-solid fa-circle-plus"></i>
-                        </div>
-                        <p>196 kr</p>
-                        <br>
-                        <br>
-                    </li>
-                </ul>
-
-                <section class="orderPage__total">
-                    <h2 id="totalHeading" class="orderPage__total-heading">Total...................... 343 kr</h2>
-                    <p>ink moms + drönarleverans</p>
-                </section>
-
+            <li class="orderPage__order-list">
+                <h3 class="orderPage__sub-heading">Caffè Doppio...........................</h3>
+                <img src="./Assets/arrow-up.svg" alt="Beskrivning av SVG" width="10" height="10">
+                <p>1</p><img src="./Assets/arrow-down.svg" alt="Beskrivning av SVG" width="10" height="10">
+                <p class="order__quantity">49 kr</p>
                 <br>
                 <br>
-                <button id="orderBtn" class="Order__button">Take my money!</button>
+            </li>
 
-
-                <!-- Glöm inte att ta bort alla BR och använd css styling istället -->
+            <li class="orderPage__order-list">
+                <h3 class="orderPage__sub-heading">Cappuccino...........................</h3>
+                <img src="./Assets/arrow-up.svg" alt="Beskrivning av SVG" width="10" height="10">
+                <p class="order__quantity">4</p><img src="./Assets/arrow-down.svg" alt="Beskrivning av SVG" width="10"
+                    height="10">
+                <p>196 kr</p>
                 <br>
                 <br>
-                <a class="empty-trashcan" id="emptyTrash" href="#">Töm varukorg<i class="fa-solid fa-trash"></i></a>
+            </li>
+        </ul>
 
-            </dialog>
-        </main>
+        <section class="orderPage__total">
+            <h2 id="totalHeading" class="orderPage__total-heading">Total...................... 343 kr</h2>
+            <p>ink moms + drönarleverans</p>
+        </section>
+
+        <br>
+        <br>
+        <button id="orderBtn" class="Order__button"
+            style="padding: 15px; border-radius: 50px 50px 50px 50px; width: 250px">Take my money!</button>
+
+
+        <!-- Glöm inte att ta bort alla BR och använd css styling istället -->
+
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -105,7 +103,22 @@
 
     </div>
     <div class="loader"></div>
+    <script>
+        const oData = {
+            menuIsHidden: false
+        }
 
+        window.addEventListener('load', () => {
+            document.querySelector('#menuHamburger').addEventListener('click', () => {
+                const imgRef = document.querySelector('#menuHamburger');
+
+                imgRef.classList.toggle('menu-hamburger--open');
+                imgRef.classList.toggle('menu-hamburger--closed');
+                document.querySelector('#navMenu').classList.toggle('menu--hidden');
+                oData.menuIsHidden = !oData.menuIsHidden;
+            });
+        });
+    </script>
     <script type="module" src="./scripts/script.js"></script>
 </body>
 

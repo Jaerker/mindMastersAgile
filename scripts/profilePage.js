@@ -1,11 +1,13 @@
 import api from './api.js';
 import { setupHamburger } from './hamburger.js';
+import setupLoader from './lazyLoader.js';
 
 window.addEventListener('load', async () => {
 
-    api.user.login('bradpitt');
+    api.user.login('bergwallz');
 
     setupHamburger();
+    setupLoader();
     const profileImgRef = document.querySelector('#profileImg');
     const profileNameRef = document.querySelector('#profileName');
     const profileEmailRef = document.querySelector('#profileEmail');
