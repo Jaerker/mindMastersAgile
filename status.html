@@ -5,28 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Status page</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./index-temp-style.css">
+    <link rel="stylesheet" href="./styles/pages/status-style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/components/lazy-loader.css">
+    
 </head>
 
 <body>
+    
 
-    <main>
-        <p>Ordernummer #12DV23F</p>
 
-        <section>
-            <img src="Assets/drone.svg" alt="Drone">
+    <main class="status">
+       
+        <h1 class="StatusOrderNmr"> </h1>
+       
+
+        <section class="droneSection ">
+            
+            <img class="droneImg " src="Assets/drone.svg" alt="Drone">
         </section>
 
-        <h1>Din beställning är på väg!</h1>
+        <h2 class="deliveyMsg"></h2>
 
-        <p id="estimatedTime">13 minuter</p>
+        <p id="estimatedTime"> Förväntade tid är 13  minuter</p>
+        <button id="statusButton">Beställa Nu</button>
 
-        <button id="statusButton">Ok, cool!</button>
+        
     </main>
+    
 
-    <script type="module" src="./script.js"></script>
 
+    <script type=" module" src="./scripts/script.js"></script>
+    <script src="./scripts/status.js"></script>
 </body>
 
 </html>
