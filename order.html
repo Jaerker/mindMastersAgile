@@ -7,6 +7,7 @@
     <title>Order Page</title>
 </head>
 <link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./styles/pages/order-style.css">
 <link rel="stylesheet" href="./index-temp-style.css">
 
 <body>
@@ -38,33 +39,35 @@
         <ul class="orderPage__order">
             <li class="orderPage__order-list">
                 <h3 class="orderPage__sub-heading">Bryggkaffe...........................</h3>
-                <img src="./Assets/arrow-up.svg" alt="Beskrivning av SVG" width="10" height="10">
-                <p class="order__quantity">2</p><img src="./Assets/arrow-down.svg" alt="Beskrivning av SVG" width="10"
-                    height="10">
+                <img src="./Assets/arrow-up.svg" alt="Beskrivning av SVG" class="arrow-up" width="10" height="10">
+                <p class="order__quantity">2</p>
+                <img src="./Assets/arrow-down.svg" alt="Beskrivning av SVG" class="arrow-down" width="10" height="10">
                 <p>98 kr</p>
                 <br>
                 <br>
             </li>
-
+        
             <li class="orderPage__order-list">
                 <h3 class="orderPage__sub-heading">Caffè Doppio...........................</h3>
-                <img src="./Assets/arrow-up.svg" alt="Beskrivning av SVG" width="10" height="10">
-                <p>1</p><img src="./Assets/arrow-down.svg" alt="Beskrivning av SVG" width="10" height="10">
+                <img src="./Assets/arrow-up.svg" alt="Beskrivning av SVG" class="arrow-up" width="10" height="10">
+                <p>1</p>
+                <img src="./Assets/arrow-down.svg" alt="Beskrivning av SVG" class="arrow-down" width="10" height="10">
                 <p class="order__quantity">49 kr</p>
                 <br>
                 <br>
             </li>
-
+        
             <li class="orderPage__order-list">
                 <h3 class="orderPage__sub-heading">Cappuccino...........................</h3>
-                <img src="./Assets/arrow-up.svg" alt="Beskrivning av SVG" width="10" height="10">
-                <p class="order__quantity">4</p><img src="./Assets/arrow-down.svg" alt="Beskrivning av SVG" width="10"
-                    height="10">
+                <img src="./Assets/arrow-up.svg" alt="Beskrivning av SVG" class="arrow-up" width="10" height="10">
+                <p class="order__quantity">4</p>
+                <img src="./Assets/arrow-down.svg" alt="Beskrivning av SVG" class="arrow-down" width="10" height="10">
                 <p>196 kr</p>
                 <br>
                 <br>
             </li>
         </ul>
+        
 
         <section class="orderPage__total">
             <h2 id="totalHeading" class="orderPage__total-heading">Total...................... 343 kr</h2>
@@ -120,6 +123,7 @@
         });
     </script>
     <script type="module" src="./scripts/script.js"></script>
+    <script src="./scripts/orderArrowAddRemove.js"></script>
 </body>
 
 </html>
