@@ -4,28 +4,9 @@
 body{
     background:var(--dark-green-color);
 }
-.background-images{
-    z-index:-1;
-}
-.background-images__leaves{
-    position:absolute;
-}
-.background-images__leaves--left{
-    left:0;
-    height:100vh;
-}
-.background-images__leaves--right{
-    height:100vh;
-    right:0;
-}
-.background-images__leaves--top{
-    width:100vw;
-    top:0;
-}
-.background-images__leaves--bottom{
-    width:100vw;
-
-    bottom:0;
+.background-image{
+    width:100%;
+    height:100%;
 }
 /* CONTENT WRAPPER */
 .content-wrapper {
