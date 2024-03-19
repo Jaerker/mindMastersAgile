@@ -3,7 +3,11 @@ import { setupHamburger } from './hamburger.js';
 
 window.addEventListener('load', async () => {
 
-    api.user.login('bradpitt');
+    if(!api.user.getCurrentUser()){
+        location.href = '/login.html';
+    }
+
+    api.user.login('bergwallz');
 
     setupHamburger();
     const profileImgRef = document.querySelector('#profileImg');
