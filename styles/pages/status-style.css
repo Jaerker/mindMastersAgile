@@ -1,5 +1,12 @@
 @import url("../root.css");
 
+
+.indexHeader {
+  margin: auto;
+  padding: 2rem;
+  background-color: rgb(247,247,247);
+  
+}
 .status {
 
     padding: 2rem;
@@ -91,6 +98,33 @@
   .deliveyMsg {
  margin: auto;
   }
+
+
+  .indexSectionImg {
+    position: absolute;
+    right: 10rem; /* Flytta elementet till höger kant av dess förälderelement */
+    top: 0; /* Behåll elementet på toppen av dess förälderelement */
+    width: 60px;
+    height: 60px;
+    z-index: auto;
+    background-color: #38846D;
+    color: #38846D;
+}
+
+@keyframes flyUp {
+  0% {
+      transform: translateY(0);
+  }
+  100% {
+      transform: translateY(-50px); /* Justera detta värde efter behov */
+  }
+}
+
+.startAnimation {
+  /* Lägg till animation när klassen startAnimation läggs till */
+  animation: flyUp 1s ease-in-out infinite alternate;
+}
+
 
  
 

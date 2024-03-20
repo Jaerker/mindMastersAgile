@@ -9,7 +9,7 @@ window.addEventListener('load', async () => {
 
     await api.user.list();
     await api.product.list();
-    api.user.login('bergwallz');
+    // api.user.login('bergwallz');
     api.orderHistory.list();
 
 
@@ -102,11 +102,12 @@ function logIn() {
         // Om användarnamn och lösenord matchar en användare i arrayen
         if (user.username === usernameInput && user.password === passwordInput) {
             // Dölj innehållsrutan och bakgrundsbilden när inloggningen lyckas
-            contentWrapper.style.display = 'none';
-            backgroundImage.style.display = 'none';
-            loginMessage.style.display = 'none'; // Dölj meddelandetext
-            return; // Avsluta funktionen efter lyckad inloggning
+
+            api.user.login(usernameInput);
+            location.href = '/profile.html';
+            return;
         }
+
     }
 
     // Om inloggningen misslyckas, visa ett felmeddelande för användaren
