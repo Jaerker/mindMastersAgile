@@ -16,3 +16,4 @@ window.addEventListener('load', async () => {
     document.querySelector('#profileImg').src = currentUser.profile_image;
 
 });
+

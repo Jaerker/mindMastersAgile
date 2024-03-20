@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Airbeanz</title>
-    <link rel="stylesheet" href="./styles/pages/dashboard-subpage-style.css">
+    <link rel="stylesheet" href="./styles/pages/dashboard-details-style.css">
 </head>
 <body>
-    <div class="dashboard__wrapper">
+    <div class="dashboard-details__wrapper">
         <header>
             <img class="header__image" src="./Assets/graphics-header.svg" alt="header - leafs">
             <button class="menu-hamburger menu-hamburger--closed" id="menuHamburger"></button>
@@ -23,20 +23,38 @@
         </header>
     
         <main>
-            <section class="dashboard__info">
-                <h1 class="dashboard__title">Produkter</h1>
+            <section class="dashboard-details__info">
+                <h1 class="dashboard-details__title">Produkter</h1>
             </section>
-            <ul class="dashboard__item-list">
-                <li class="dashboard__item">
-                    <button class="dashboard__section">
+            <ul class="dashboard-details__item-list" id="productsList">
+                <li class="dashboard-details__item" id="product1">
+                    <h2 class="item__title">Latte Macchiato</h2>
+                    <h3 class="item__price-header">Price: </h3>
+                    <h3 class="item__price">65 </h3>   
+                    <button class="item__button-for-open" id="showBtn">MER INFO</button>
+                    <section class="item__detailed-information item__detailed-information--hidden" id="extraInfo">
+
+ 
+                            <button class="item__button-for-edit" id="editBtn">EDIT</button>
+
+                        <h3 class="item__description-header">Beskrivning </h3>
+                        <p class="item__description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum aperiam praesentium nam perferendis fugiat distinctio quisquam beatae ex commodi facere.</p>
+                        <h3 class="item__longer-description-header">Längre beskrivning</h3>
+                        <p class="item__longer-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora doloremque ipsum, ea repudiandae dolore cumque libero dolorum atque dolor. Dignissimos consequatur ea iusto quae nam enim voluptate sed veniam voluptates nisi temporibus vitae sit repudiandae dolor aspernatur rem voluptas maiores non asperiores ipsa incidunt necessitatibus esse, ex nulla! Magni laudantium veritatis, voluptatem similique quas deleniti soluta ipsum quo voluptatum fugit vel corporis ipsam iste, libero unde modi provident quis dolores repudiandae possimus molestias at nesciunt? Praesentium placeat assumenda veniam iure.</p>
+                    
+                    </section></li>
+                <li class="dashboard-details__item">
+                    <forms class="dashboard-details__editor">
+                        <label for="text" >Titel</label>
+                        <input type="text" name="title" id="title" placeholder="Titel">
+                        <label for="price" >Pris</label>
+                        <input type="number" name="price" id="price" placeholder="Pris">
                         
-                    </button>
-                </li>
-                <li class="navigation__item">
-                    <a href="#" class="navigation__link" id="users">Användare</a>
-                </li>
-                <li class="navigation__item">
-                    <a href="#" class="navigation__link" id="orderHistory">Orderhistorik</a>
+                        <label for="desc" >Kort beskrivning</label>
+                        <input type="text" name="desc" id="desc" placeholder="Kort beskrivning">
+                        <label for="longerDesc" >Längre beskrivning</label>
+                        <input type="text" name="longerDesc" id="longerDesc" placeholder="Längre beskrivning">
+                    </forms>
                 </li>
             </ul>
     
@@ -45,11 +63,8 @@
     
     
         </main>
-         <footer>
-                <img class="footer__img" src="./Assets/graphics-footer.svg" alt="footer - leafs">
-            </footer>
+
     </div>
-    <div class="loader"></div>
-    <script type="module" src="./scripts/dashboard.js"></script>
+    <script type="module" src="./scripts/dashboardDetails.js"></script>
 </body>
 </html>
