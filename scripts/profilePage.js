@@ -8,7 +8,7 @@ window.addEventListener('load', async () => {
         location.href = '/login.html';
     }
 
-    api.user.login('bergwallz');
+    // api.user.login('bergwallz');
 
     setupHamburger();
     setupLoader();
@@ -50,7 +50,10 @@ window.addEventListener('load', async () => {
     });
 
 
-
+    document.querySelector('#logout').addEventListener('click', () => {
+        api.user.logout();
+        location.href = '/';
+    });
 
     getOrderHistory();
 
