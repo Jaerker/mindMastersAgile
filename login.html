@@ -11,82 +11,84 @@
 </head>
 
 <body>
-    <div class="background-image"></div>
-    <div class="content-wrapper">
+    <div class="background-image">
+        <div class="content-wrapper">
 
 
-        <section class="body__section active" id="loginForm">
-            <form class="login-form">
-                <label for="login-username">Username:</label>
-                <input type="text" id="login-username" name="username" required>
+            <section class="body__section active" id="loginForm">
+                <form class="login-form">
+                    <label for="login-username">Username:</label>
+                    <input type="text" id="login-username" name="username" required>
 
-                <label for="login-password">Password:</label>
-                <input type="password" id="login-password" name="password" required>
+                    <label for="login-password">Password:</label>
+                    <input type="password" id="login-password" name="password" required>
 
-                <input type="submit" value="Login" id="login-submit">
-                <button class="toggle-btn" onclick="toggleForm()">New Registration</button>
-
-
-            </form>
-
-        </section>
-        <h1 id="login-message"></h1>
-
-        <section class="body__section" id="registerForm">
-            <form class="register-form">
-                <label for="register-username">Username:</label>
-                <input type="text" id="register-username" name="username" required>
-
-                <label for="register-email">Email:</label>
-                <input type="email" id="register-email" name="email" required>
-
-                <label for="register-password">Password:</label>
-                <input type="password" id="register-password" name="password" required>
-
-                <label for="confirm-password">Confirm Password:</label>
-                <input type="password" id="confirm-password" name="confirm-password" required>
-
-                <input type="submit" value="Register">
-
-                <button class="toggle-btn" onclick="toggleForm()">Back to Login</button>
-                <label class="custom-checkbox">
-                    <span>Godkänner GDPR</span>
-                    <input type="checkbox" id="gdprCheckbox" class="checkbox-input">
-                </label>
-            </form>
-        </section>
-
-    </div>
-    <div class="loader"></div>
+                    <input type="submit" value="Login" id="login-submit">
+                    <button class="toggle-btn" onclick="toggleForm()">New Registration</button>
 
 
+                </form>
 
-    <script>
-        function toggleForm() {
-            var loginForm = document.getElementById('loginForm');
-            var registerForm = document.getElementById('registerForm');
-            loginForm.classList.toggle('active');
-            registerForm.classList.toggle('active'); //Togglar formuläret så det skiftar. //
-        }
-        function validateLoginForm() {
-            var gdprCheckbox = document.getElementById("gdprCheckbox");
-            if (!gdprCheckbox.checked) {
-                window.alert("Du måste godkänna GDPR för att logga in.");
-                return false; // Förhindrar att formuläret skickas om GDPR inte är godkänt //
+            </section>
+
+
+            <section class="body__section" id="registerForm">
+                <form class="register-form">
+                    <label for="register-username">Username:</label>
+                    <input type="text" id="register-username" name="username" required>
+
+                    <label for="register-email">Email:</label>
+                    <input type="email" id="register-email" name="email" required>
+
+                    <label for="register-password">Password:</label>
+                    <input type="password" id="register-password" name="password" required>
+
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+
+                    <input type="submit" value="Register">
+
+                    <div class="gdpr-container">
+                        <button class="toggle-btn" onclick="toggleForm()">Back to Login</button>
+                        <p>Godkänn GDPR</p>
+                        <label class="custom-checkbox">
+                            <input type="checkbox" id="gdprCheckbox" class="checkbox-input">
+                    </div>
+                    </label>
+                </form>
+            </section>
+
+        </div>
+        <div class="loader"></div>
+
+
+
+        <script>
+            function toggleForm() {
+                var loginForm = document.getElementById('loginForm');
+                var registerForm = document.getElementById('registerForm');
+                loginForm.classList.toggle('active');
+                registerForm.classList.toggle('active'); //Togglar formuläret så det skiftar. //
             }
-            return true;
-        }
+            function validateLoginForm() {
+                var gdprCheckbox = document.getElementById("gdprCheckbox");
+                if (!gdprCheckbox.checked) {
+                    window.alert("Du måste godkänna GDPR för att logga in.");
+                    return false; // Förhindrar att formuläret skickas om GDPR inte är godkänt //
+                }
+                return true;
+            }
 
-        function toggleForm() {
-            var loginForm = document.getElementById('loginForm');
-            var registerForm = document.getElementById('registerForm');
-            loginForm.classList.toggle('active');
-            registerForm.classList.toggle('active');
-        }
-    </script>
+            function toggleForm() {
+                var loginForm = document.getElementById('loginForm');
+                var registerForm = document.getElementById('registerForm');
+                loginForm.classList.toggle('active');
+                registerForm.classList.toggle('active');
+            }
+        </script>
 
-    <script type="module" src="./scripts/script.js"></script>
-
+        <script type="module" src="./scripts/script.js"></script>
+    </div>
 </body>
 
 </html>
