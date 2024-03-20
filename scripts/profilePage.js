@@ -1,15 +1,15 @@
 import api from './api.js';
 import { setupHamburger } from './hamburger.js';
 import setupLoader from './lazyLoader.js';
+import { checkIfAdmin } from './adminFunctions.js';
 
 window.addEventListener('load', async () => {
 
     if(!api.user.getCurrentUser()){
         location.href = '/login.html';
     }
-
-    // api.user.login('bergwallz');
-
+    
+    checkAdmin();
     setupHamburger();
     setupLoader();
     const profileImgRef = document.querySelector('#profileImg');

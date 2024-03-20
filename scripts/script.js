@@ -1,4 +1,5 @@
 import api from './api.js';
+import { checkIfAdmin } from './adminFunctions.js';
 
 const oData = {
     menuIsHidden: false
@@ -13,19 +14,7 @@ window.addEventListener('load', async () => {
     // api.orderHistory.list();
 
     const currentUser = await api.user.details(api.user.getCurrentUser());
-    if(currentUser.role === 'admin'){
-        const menuListRef = document.querySelector('#menuList');
-
-        const listItemElement = document.createElement('li');
-        const anchorElement = document.createElement('a');
-
-        listItemElement.classList.add('menu__choice');
-        anchorElement.classList.add('menu__link');
-        anchorElement.href = './dashboard.html';
-        anchorElement.textContent = 'Dashboard';
-        listItemElement.append(anchorElement);
-        menuListRef.append(listItemElement);
-    }
+    checkIfAdmin();
 
     const loader = document.querySelector('.loader');
         loader.classList.add('loader-hidden'); // Ta bort punkten från "loader-hidden"

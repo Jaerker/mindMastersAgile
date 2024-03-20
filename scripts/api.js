@@ -109,7 +109,7 @@ const product = {
     /**
      * 
      * @param {number} productId id of product we want details about
-     * @returns {{id:number, title:string, desc:string, price:number}} returns the product from localStorage
+     * @returns {{id:number, title:string, desc:string, longer_desc:string, price:number}} returns the product from localStorage
      * 
      */
     details: async (productId) => {
@@ -118,7 +118,7 @@ const product = {
     },
     /**
      * 
-     * @param {{title: string, desc: string, price: number}} product the product we want to add to localStorage
+     * @param {{title: string, desc: string, longer_desc:string, price: number}} product the product we want to add to localStorage
      * @returns {boolean} TRUE if successful, FALSE if not.
      */
     add: async (productToAdd) => {
