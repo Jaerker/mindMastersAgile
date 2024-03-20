@@ -2,102 +2,117 @@
 
 
 .profilePage {
-    background-color: var(--dark-brown);
-  }
-  
-  .profile__changeImg,
-  .profile__changePassword {
-    border-style:none;
-    background:transparent;
-    text-decoration: none;
-    color: var(--red-color);
-    font-weight: 700;
-    padding: 10px;
-  }
-  
-  .profile__changePassword:hover {
-    color: var(--color-green);
-  }
-  
-  .profile__changeImg:hover {
-    color: var(--color-green);
-  }
-  
-  .wrapper-profile {
-    max-width: 100%;
-    color: var(--color-white);
-    font-family: var(--font-family1);
-  }
-  
-  
-  
-  .profile-header {
-    width: 100%;
-    height: auto;
-  }
-  
-  .profile__user-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .profile__picture {
-    border-radius:50%;
-    width:97px;
-  }
-  
-  .profile__heading {
-    padding: 5px;
-    font-size: 24px;
-  }
-  
-  .profile__OrderHistory {
-    margin-top: 50px;
-    margin-bottom: 20px;
-    padding: 10px;
-  }
-  
-  .profile__heading {
-    display: flex;
-    justify-content: left;
-  }
-  
-  .id-and-date {
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 15px 0px 15px;
-    font-size: 14px;
-    opacity: 0.5;
-    margin-top: 10px;
-  }
-  .order-id-bold{
-    font-weight: bold;
-  }
-  .order-history__empty{
-    font-weight:bold;
-    text-align: center;
-    font-size: 1.5rem;
-    
-  }
-  .total-and-price {
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 15px 0px 15px;
-    font-size: 14px;
-    opacity: 0.5;
-  }
-  
-  .order-total {
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 15px 0px 15px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-  
-  hr {
-    width: 90%;
-    margin: auto;
-  }
+  background-color: var(--dark-brown);
+}
+
+.profile__changeImg,
+.profile__changePassword {
+  border-style: none;
+  background: transparent;
+  text-decoration: none;
+  color: var(--red-color);
+  font-weight: 700;
+  padding: 10px;
+}
+
+.profile__changePassword:hover {
+  color: var(--color-green);
+}
+
+.profile__changeImg:hover {
+  color: var(--color-green);
+}
+
+.wrapper-profile {
+  max-width: 100%;
+  color: var(--color-white);
+  font-family: var(--font-family1);
+}
+
+
+
+.profile-header {
+  width: 100%;
+  height: auto;
+}
+
+.profile__user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile__picture {
+  border-radius: 50%;
+  width: 97px;
+}
+
+.profile__heading {
+  padding: 5px;
+  font-size: 24px;
+}
+
+.profile__OrderHistory {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.profile__heading {
+  display: flex;
+  justify-content: left;
+}
+
+.id-and-date {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 15px 0px 15px;
+  font-size: 14px;
+  opacity: 0.5;
+  margin-top: 10px;
+}
+
+.order-id-bold {
+  font-weight: bold;
+}
+
+.order-history__empty {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.5rem;
+
+}
+
+.total-and-price {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 15px 0px 15px;
+  font-size: 14px;
+  opacity: 0.5;
+}
+
+.order-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 15px 0px 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+hr {
+  width: 90%;
+  margin: auto;
+}
+
+.order-history__empty p {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 300;
+  width: 70%;
+  margin: auto;
+}
