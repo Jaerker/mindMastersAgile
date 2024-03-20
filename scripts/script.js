@@ -16,6 +16,7 @@ window.addEventListener('load', async () => {
     const currentUser = await api.user.details(api.user.getCurrentUser());
     checkIfAdmin();
 
+
     const loader = document.querySelector('.loader');
         loader.classList.add('loader-hidden'); // Ta bort punkten från "loader-hidden"
         loader.addEventListener('transitionend', () => { // Ta bort punkten efter "transitionend" och använd ett argument för att hantera händelsen
@@ -105,11 +106,12 @@ function logIn() {
         // Om användarnamn och lösenord matchar en användare i arrayen
         if (user.username === usernameInput && user.password === passwordInput) {
             // Dölj innehållsrutan och bakgrundsbilden när inloggningen lyckas
-            contentWrapper.style.display = 'none';
-            backgroundImage.style.display = 'none';
-            loginMessage.style.display = 'none'; // Dölj meddelandetext
-            return; // Avsluta funktionen efter lyckad inloggning
+
+            api.user.login(usernameInput);
+            location.href = '/profile.html';
+            return;
         }
+
     }
 
     // Om inloggningen misslyckas, visa ett felmeddelande för användaren

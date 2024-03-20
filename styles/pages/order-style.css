@@ -136,7 +136,7 @@
   
   /* DIALOG OPEN */
   
-  .dialog-open {
+  .dialog[open] {
     width: 350px;
     margin: auto;
     margin-top: 510px;

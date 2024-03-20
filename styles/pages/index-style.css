@@ -4,6 +4,14 @@ body {
     background: #38846D;
 }
 
+
+.indexHeader {
+    margin: auto;
+    padding: 2rem;
+    background-color: rgb(247,247,247);
+    
+}
+
 .bg-images {
     display: flex;
     justify-content: space-between;
@@ -33,4 +41,15 @@ body {
     right: 0;
     margin: auto;
 
+}
+
+.indexSectionImg {
+    position: absolute;
+    right: 10rem; /* Flytta elementet till höger kant av dess förälderelement */
+    top: 0; /* Behåll elementet på toppen av dess förälderelement */
+    width: 60px;
+    height: 60px;
+    z-index: auto;
+    background-color: #38846D;
+    color: #38846D;
 }
