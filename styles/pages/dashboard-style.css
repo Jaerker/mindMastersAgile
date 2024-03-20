@@ -86,3 +86,125 @@ body{
     text-decoration: none;
     color:var(--color-dark-green);
 }
+
+/* DASHBOARD DETAILS */
+
+
+.dashboard-details__wrapper{
+    background: var(--dark-brown);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content: flex-start;
+}
+.dashboard-details__info{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.dashboard-details__subtitle,
+.dashboard-details__title{
+    font-family: var(--font-family1);
+    text-align: center;
+    color:var(--color-white);
+
+    padding: 0;
+}
+.dashboard-details__title{
+    font-size: 3rem;
+    margin-bottom: 3rem;
+
+}
+.dashboard-details__item-list{
+
+    margin:0 1rem;
+}
+
+.dashboard-details__item{
+    color: var(--color-white);
+    border: solid 2px var(--color-white);
+    border-radius:5px;
+    gap:.5rem;
+    margin:.5rem;
+    padding:1rem;
+    text-align: center;
+    list-style: none;
+    padding-top:1rem;
+}
+.item__button-for-open{
+    position:relative;
+    top:2vh;
+    width: 50vw;
+    height:10vw;;
+    border-style:none;
+    background:transparent;
+    color:var(--red-color);
+    font-weight:700;
+    border: 2px solid var(--red-color);
+    border-radius:10px;
+}
+.item__detailed-information{
+    display:flex;
+    flex-direction: column;
+    gap:.5rem;
+    align-items: center;
+    margin:.5rem;
+    padding:1rem;
+}
+.item__detailed-information--hidden{
+    height:0;
+    pointer-events: none;
+    opacity:0;
+    overflow:hidden;
+}
+.item__title{
+    font-size:2.2rem;
+}
+
+
+.item__button-for-edit{
+    width: 4rem;
+    height:3.5rem;
+    margin:auto;
+    border-style:none;
+    background:transparent;
+    color:var(--red-color);
+    font-weight:700;
+    border: 2px solid var(--red-color);
+    border-radius:10px;
+
+    grid-area: a;
+}
+.item__price-header{
+    margin:auto;
+    grid-area: b;
+
+}
+.item__price{
+    margin:auto;
+    width:100%;
+    height:100%;
+    font-size:2rem;
+    text-align: center;
+    grid-area: c;
+}
+.item__description-header,
+.item__longer-description-header{
+    font-size:1.2rem;
+}
+.item__description,
+.item__longer-description{
+    margin:.2rem;
+    padding:.5rem;
+    border-radius:5px;
+    font-size:1.1rem;
+    background:rgb(0,0,0,.3);
+}
+.dashboard-details__editor{
+    grid-column: span 2;
+    display:flex;
+    flex-direction: column;
+    max-width:600px;
+    margin:auto;
+}
