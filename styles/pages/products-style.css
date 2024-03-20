@@ -20,6 +20,14 @@ h1 {
     font-weight: bold;
 }
 
+.indexHeader {
+    margin: auto;
+    padding: 4rem;
+    background-color: rgb(247,247,247);
+    
+}
+
+
 
 
 .products {
@@ -100,4 +108,15 @@ h1 {
     margin-block-start: 0em;
     margin-block-end: 0em;
 
+}
+
+.indexSectionImg {
+    position: absolute;
+    right: 10rem; /* Flytta elementet till höger kant av dess förälderelement */
+    top: 0; /* Behåll elementet på toppen av dess förälderelement */
+    width: 60px;
+    height: 60px;
+    z-index: auto;
+    background-color: #38846D;
+    color: #38846D;
 }
