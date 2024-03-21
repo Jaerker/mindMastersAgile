@@ -1,7 +1,6 @@
 import api from './api.js';
-import { setupHamburger } from './hamburger.js';
+import {setupHamburger, setupCart, checkIfAdmin} from './mainFunctions.js';
 import setupLoader from './lazyLoader.js';
-import { checkIfAdmin } from './adminFunctions.js';
 
 window.addEventListener('load', async () => {
 
@@ -10,9 +9,11 @@ window.addEventListener('load', async () => {
     }
    
     checkIfAdmin();
-
     setupHamburger();
     setupLoader();
+    setupCart();
+    
+    
     const profileImgRef = document.querySelector('#profileImg');
     const profileNameRef = document.querySelector('#profileName');
     const profileEmailRef = document.querySelector('#profileEmail');
