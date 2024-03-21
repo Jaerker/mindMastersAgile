@@ -1,24 +1,22 @@
+
 import setupLoader from './lazyLoader.js';
-import {setupHamburger, setupCart, checkIfAdmin} from './mainFunctions.js';
+import {setupHamburger, setupCart, checkIfAdmin, setupProductList} from './mainFunctions.js';
 
-const oData = {
-    listTemplate: {}
-}
 
-window.addEventListener('load', () => {
+
+window.addEventListener('load', async () => {
     setupHamburger();
     checkIfAdmin();
     setupCart();
     setupLoader();
+    const productsListRef = document.querySelector('#productsList').cloneNode(true);
+    document.querySelector('.products__item').remove();
+    await setupProductList(productsListRef);
 
-    // oData.listTemplate = document.querySelector('.dashboard-details__edit-box').cloneNode(true);
-    // oData.listItemTemplate = document.querySelector('.dashboard-details__item').cloneNode(true);
-    // document.querySelector('.dashboard-details__item').remove();
-   
+
+
+    
+
 
 
 });
-
-function setupListElement(){
-
-}

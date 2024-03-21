@@ -73,6 +73,60 @@
     </div>
     <div class="loader"></div>
 
+    
+    <!-- HÄR NERE ÄR KUNDKORGEN -->
+    <span class="product-number" id="cartAmountTop"></span>
+    <a href="#" id="cartBtn">
+
+            <img class="cart-icon" src="./Assets/bag.svg" alt="shoppingBasket">
+    </a>
+    <section id="cartDialog" class="cart-dialog cart-dialog--hidden">
+
+        <dialog class="dialog" open>
+
+
+            <h1 class="orderPage__title"> Din beställning</h1>
+            <br>
+            <br>
+
+            <ul class="orderPage__order" id="ulForCart">
+                <section class="orderPage__empty-cart">
+                    <h3>Det ligger inga varor i korgen än!</h3> 
+                    <p>Vraka och välj av olika goda sorter i menyn!</p>
+                </section>
+                <li class="orderPage__order-list" id="idHere">
+                    <div class="test-flex">
+                        <h3 class="orderPage__sub-heading">Bryggkaffe<span class="dotted-line">. . . . . . . . . .
+                            </span>
+                        </h3>
+                        <p class="order__quantity"><i class="order__remove-btn fa-solid fa-circle-minus"></i><span
+                                class="product-quantity">2</span></i><i class=" order__add-btn fa-solid fa-circle-plus"></i>
+                    </div>
+                    <p> <span class="order-price"></span> kr</p>
+                    <br>
+                    <br>
+                </li>
+
+                
+            </ul>
+
+            <section class="orderPage__total">
+                <h2 id="totalHeading" class="orderPage__total-heading">Total...................... <span id="totalAmount"></span> kr</h2>
+                <p>ink moms + drönarleverans</p>
+            </section>
+
+            <br>
+            <br>
+            <button id="orderBtn" class="order__button">Take my money!</button>
+
+
+            <!-- Glöm inte att ta bort alla BR och använd css styling istället -->
+            <br>
+            <br>
+            <a class="empty-trashcan" id="emptyTrash" href="#">Töm varukorg<i class="fa-solid fa-trash"></i></a>
+
+        </dialog>
+        </section>
 
 
 

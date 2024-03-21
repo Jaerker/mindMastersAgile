@@ -4,6 +4,7 @@
 @import url("./components/header.css");
 @import url("./components/lazy-loader.css");
 @import url("./components/hamburger-menu.css");
+@import url("./components/cart-style.css");
 
 :root {
     --color-dark: #000000;

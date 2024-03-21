@@ -17,6 +17,7 @@
             </section>
 
             <img class="header__image" src="./Assets/graphics-header.svg" alt="header - leafs">
+            
             <button class="menu-hamburger menu-hamburger--closed" id="menuHamburger"></button>
             <nav class="menu menu--hidden" id="navMenu">
                 <ul class="menu__list" id="menuList">
@@ -30,77 +31,20 @@
 
 
 
-        <section class="products">
+        <section class="products" id="products">
             <h1 class="products__title">Meny</h1>
-            <ul class="products__list">
+            <ul class="products__list" id="productsList">
 
                 <li class="products__item">
-                    <i class="fa-solid fa-circle-plus"></i>
+
+                    <i class="plus-btn fa-solid fa-circle-plus"></i>
+                    
                     <article class="products__coffee-info">
+                        
                         <div class="products__title-price">
                             <h2 class="products__coffee-title">Bryggkaffe</h2>
                             <div class="products__dotted-line"></div>
-                            <h2 class="products__price">49 kr</h2>
-                        </div>
-                        <p class="products__coffee-description">Bryggd på månadens bönor</p>
-                    </article>
-                </li>
-
-                <li class="products__item">
-                    <i class="fa-solid fa-circle-plus"></i>
-                    <article class="products__coffee-info">
-                        <div class="products__title-price">
-                            <h2 class="products__coffee-title">Caffé Doppio</h2>
-                            <div class="products__dotted-line"></div>
-                            <h2 class="products__price">49 kr</h2>
-                        </div>
-                        <p class="products__coffee-description">Bryggd på månadens bönor</p>
-                    </article>
-                </li>
-
-                <li class="products__item">
-                    <i class="fa-solid fa-circle-plus"></i>
-                    <article class="products__coffee-info">
-                        <div class="products__title-price">
-                            <h2 class="products__coffee-title">Cappuccino</h2>
-                            <div class="products__dotted-line"></div>
-                            <h2 class="products__price">49 kr</h2>
-                        </div>
-                        <p class="products__coffee-description">Bryggd på månadens bönor</p>
-                    </article>
-                </li>
-
-                <li class="products__item">
-                    <i class="fa-solid fa-circle-plus"></i>
-                    <article class="products__coffee-info">
-                        <div class="products__title-price">
-                            <h2 class="products__coffee-title">Latte Macchiato</h2>
-                            <div class="products__dotted-line"></div>
-                            <h2 class="products__price">49 kr</h2>
-                        </div>
-                        <p class="products__coffee-description">Bryggd på månadens bönor</p>
-                    </article>
-                </li>
-
-                <li class="products__item">
-                    <i class="fa-solid fa-circle-plus"></i>
-                    <article class="products__coffee-info">
-                        <div class="products__title-price">
-                            <h2 class="products__coffee-title">Kaffe Latte</h2>
-                            <div class="products__dotted-line"></div>
-                            <h2 class="products__price">49 kr</h2>
-                        </div>
-                        <p class="products__coffee-description">Bryggd på månadens bönor</p>
-                    </article>
-                </li>
-
-                <li class="products__item">
-                    <i class="fa-solid fa-circle-plus"></i>
-                    <article class="products__coffee-info">
-                        <div class="products__title-price">
-                            <h2 class="products__coffee-title">Cortado</h2>
-                            <div class="products__dotted-line"></div>
-                            <h2 class="products__price">39 kr</h2>
+                            <h2 class="products__price"><span class="product-price"></span> kr</h2>
                         </div>
                         <p class="products__coffee-description">Bryggd på månadens bönor</p>
                     </article>
@@ -119,14 +63,11 @@
     <div class="loader"></div>
 
     <!-- HÄR NERE ÄR KUNDKORGEN -->
-    <span class="product-number" id="cartAmountTop">5</span>
-    
+    <span class="product-number" id="cartAmountTop"></span>
     <a href="#" id="cartBtn">
 
             <img class="cart-icon" src="./Assets/bag.svg" alt="shoppingBasket">
     </a>
-
-
     <section id="cartDialog" class="cart-dialog cart-dialog--hidden">
 
         <dialog class="dialog" open>
@@ -137,15 +78,19 @@
             <br>
 
             <ul class="orderPage__order" id="ulForCart">
+                <section class="orderPage__empty-cart">
+                    <h3>Det ligger inga varor i korgen än!</h3> 
+                    <p>Vraka och välj av olika goda sorter i menyn!</p>
+                </section>
                 <li class="orderPage__order-list" id="idHere">
                     <div class="test-flex">
                         <h3 class="orderPage__sub-heading">Bryggkaffe<span class="dotted-line">. . . . . . . . . .
                             </span>
                         </h3>
-                        <p class="order__quantity"><i class="fa-solid fa-circle-minus"></i><span
-                                class="product-quantity">2</span></i><i class="fa-solid fa-circle-plus"></i>
+                        <p class="order__quantity"><i class="order__remove-btn fa-solid fa-circle-minus"></i><span
+                                class="product-quantity">2</span></i><i class=" order__add-btn fa-solid fa-circle-plus"></i>
                     </div>
-                    <p>98 kr</p>
+                    <p> <span class="order-price"></span> kr</p>
                     <br>
                     <br>
                 </li>
@@ -154,7 +99,7 @@
             </ul>
 
             <section class="orderPage__total">
-                <h2 id="totalHeading" class="orderPage__total-heading">Total...................... <span id="totalAmount">343</span> kr</h2>
+                <h2 id="totalHeading" class="orderPage__total-heading">Total...................... <span id="totalAmount"></span> kr</h2>
                 <p>ink moms + drönarleverans</p>
             </section>
 

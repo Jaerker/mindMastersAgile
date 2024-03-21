@@ -1,8 +1,14 @@
+import api from './api.js';
+import setupLoader from "./lazyLoader.js";
+import {setupHamburger} from './mainFunctions.js';
 
 // Vänta på att DOM ska laddas och kör sedan fetchUserloginData-funktionen
 document.addEventListener('DOMContentLoaded', async () => {
-    console.log('DOM laddad');
+
+    setupLoader();
+    setupHamburger();
     await fetchUserloginData();
+    
 });
 
 // Definiera en array för att lagra användare med användarnamn och lösenord

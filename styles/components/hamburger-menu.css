@@ -1,34 +1,12 @@
 
-.menu-hamburger {
-    z-index: 2;
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    width: 50px;
-    height: 50px;
-    border-style: none;
-    border-radius: 50%;
-    background: var(--color-white);
-    /* background-size: 25px; */
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.menu-hamburger--open {
-    background-image: url('Assets/close.svg');
-}
-
-.menu-hamburger--closed {
-    background-image: url('Assets/navicon.svg');
-}
 
 .menu {
-    position: fixed;
+    position: absolute;
     top: 0;
     background: var(--dark-brown);
     width: 100vw;
     height: 100vh;
-    z-index: 1;
+    z-index: 3;
 }
 
 .menu--hidden {
@@ -36,7 +14,7 @@
 }
 
 .menu__list {
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
@@ -49,7 +27,7 @@
 }
 
 .menu-hamburger {
-    z-index: 2;
+    z-index: 4;
     position: fixed;
     top: 10px;
     left: 10px;

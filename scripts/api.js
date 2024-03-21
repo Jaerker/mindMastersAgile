@@ -313,7 +313,8 @@ const cart = {
             });
             return counter;
         }
-    }
+    },
+    clear : () => localRequest.remove('cart')
 }
 
 const api = {
