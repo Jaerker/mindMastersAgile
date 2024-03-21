@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     setupLoader();
     setupHamburger();
     users = await api.user.list(); //hämtar alla användare
-    console.log(users)
     
     
 });

@@ -47,6 +47,7 @@ const user = {
          
             const userList = await user.list();
             userToAdd.role = 'user';
+            userToAdd.profile_image = '../Assets/profile.svg';
             userList.push(userToAdd);
             localRequest.change('users', userList);
 

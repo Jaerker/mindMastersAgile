@@ -46,9 +46,7 @@ async function registerUser(username, email, password, confirmPassword) {
     // Add user to the user list
     const result = await api.user.add(userToAdd);
     if (result === true) {
-        console.log("User added successfully:", userToAdd); // Log the newly added user
 
-        console.log("Updated user list:", await api.user.list()); // Log the updated user list
         return { success: true, message: 'User registered successfully.' };
     } else {
         // Remove the user from the users array if adding to the API fails

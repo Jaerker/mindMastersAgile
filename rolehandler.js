@@ -1,6 +1,5 @@
 'use strict';
 
-console.log('Hello!');
 
 // funktion för att hämta från URL-Jaspers
 async function fetchUserData() {
@@ -21,9 +20,7 @@ fetchUserData();
 async function fetchDataAndLog() {
     try {
         const userData = await fetchUserData();
-        console.log(userData);
         let data = getUserRole('jesper123', userData);
-        console.log(data);
         // console.log(userData);
     } catch (error) {
         console.error('Fel vid hämtning av användare:', error);
