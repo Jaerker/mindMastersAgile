@@ -73,7 +73,8 @@ async function fetchUserloginData() {
             users.push({ username: user.username, password: user.password });
         });
         // Logga antalet användare och deras uppgifter
-        console.log('Användare:', users);
+        console.log('Användare från api:', users);
+        console.log("Användare från api samt local storage:", await api.user.list()); //Loggar både default users från api samt users sparade på local storage
     } else {
         // Om det uppstår ett fel vid hämtning av användardata, visa ett felmeddelande för användaren
         const loginMessage = document.getElementById('login-message');
