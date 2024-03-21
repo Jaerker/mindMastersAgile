@@ -122,8 +122,15 @@ input[type="submit"] {
 
 
 @media only screen and (min-width: 768px) {
+  .content-wrapper {
+    padding: 0 20px; 
+  }
   .body__section.active {
     width: 50%;
+  }
+
+  .login-message {
+    font-size: 25px;
   }
 
 }

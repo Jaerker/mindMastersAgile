@@ -133,3 +133,32 @@ h1 {
     font-size: 30px;
     color: var(--dark-brown);
 }
+
+/* Responsive Styles */
+@media only screen and (min-width: 768px) {
+    .products__title {
+        font-size: 54px;  
+    }
+
+    .products__coffee-title {
+        font-size: 28px;  
+    }
+
+    .products__price {
+        font-size: 28px;  
+    }
+
+    .product-number {
+        font-size: 18px;  
+        width: 30px;  
+        height: 30px;  
+        line-height: 30px;  
+    }
+
+    .fa-circle-plus {
+        font-size: 36px;  
+    }
+    .products__coffee-description {
+        font-size: 20px;
+    }
+}

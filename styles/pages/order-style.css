@@ -178,3 +178,23 @@
   z-index: 10000;
 
 }
+
+@media only screen and (min-width: 768px) {
+
+
+  .orderPage__sub-heading {
+    font-size: 30px;  
+  }
+  p {
+    font-size: 25px;
+  }
+
+  .Order__button {
+    width: 300px;  
+    font-size: 28px;  
+  }
+
+  .empty-trashcan {
+    padding-bottom: 3rem;
+  }
+}
