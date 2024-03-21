@@ -2,18 +2,22 @@ import api from './api.js';
 import setupLoader from "./lazyLoader.js";
 import {setupHamburger} from './mainFunctions.js';
 
+// Definiera en array för att lagra användare med användarnamn och lösenord
+let users = [];
+export { users };
+
 // Vänta på att DOM ska laddas och kör sedan fetchUserloginData-funktionen
 document.addEventListener('DOMContentLoaded', async () => {
 
     setupLoader();
     setupHamburger();
     users = await api.user.list(); //hämtar alla användare
+    console.log(users)
     
     
 });
 
-// Definiera en array för att lagra användare med användarnamn och lösenord
-let users = [];
+
 
 // // Funktion för att hämta användardata från API
 // async function fetchUserData(url) {
@@ -62,10 +66,14 @@ document.getElementById('login-submit').addEventListener('click', function (even
 });
 
 // Funktion för inloggning
-function logIn() {
+async function logIn() {
+
     // Hämta användarnamn och lösenord från formuläret
     const usernameInput = document.getElementById('login-username').value;
     const passwordInput = document.getElementById('login-password').value;
+
+    // Fetch the latest user list from the API
+    users = await api.user.list();
 
     // Loopa igenom varje användare i 'users'-arrayen
     for (const user of users) {
