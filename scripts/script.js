@@ -73,7 +73,8 @@ async function fetchUserloginData() {
             users.push({ username: user.username, password: user.password });
         });
         // Logga antalet användare och deras uppgifter
-        console.log('Användare:', users);
+        console.log('Användare från api:', users);
+        console.log("Användare från api samt local storage:", await api.user.list()); //Loggar både default users från api samt users sparade på local storage
     } else {
         // Om det uppstår ett fel vid hämtning av användardata, visa ett felmeddelande för användaren
         const loginMessage = document.getElementById('login-message');
@@ -91,7 +92,7 @@ document.getElementById('login-submit').addEventListener('click', function (even
 });
 
 // Funktion för inloggning
-function logIn() {
+async function logIn() {
     // Hämta användarnamn och lösenord från formuläret
     const usernameInput = document.getElementById('login-username').value;
     const passwordInput = document.getElementById('login-password').value;
@@ -100,20 +101,27 @@ function logIn() {
     const contentWrapper = document.querySelector('.content-wrapper');
     const backgroundImage = document.querySelector('.background-image');
 
-    // Loopa igenom varje användare i 'users'-arrayen
-    for (const user of users) {
-        // Om användarnamn och lösenord matchar en användare i arrayen
-        if (user.username === usernameInput && user.password === passwordInput) {
-            // Dölj innehållsrutan och bakgrundsbilden när inloggningen lyckas
+    try {
+        // Fetch the entire user list, including API users and local storage users
+        const userList = await api.user.list();
 
-            api.user.login(usernameInput);
-            location.href = '/profile.html';
-            return;
+        // Loop through the user list to find a match
+        for (const user of userList) {
+            if (user.username === usernameInput && user.password === passwordInput) {
+                // If username and password match, perform login action
+                api.user.login(usernameInput);
+                location.href = '/profile.html';
+                return;
+            }
         }
 
+        // If no match is found, display error message
+        loginMessage.textContent = 'Incorrect username or password.';
+        loginMessage.classList.add('error-message');
+    } catch (error) {
+        // Handle errors if fetching user list fails
+        console.error('Error fetching user list:', error);
+        loginMessage.textContent = 'Failed to fetch user list. Please try again later.';
+        loginMessage.classList.add('error-message');
     }
-
-    // Om inloggningen misslyckas, visa ett felmeddelande för användaren
-    loginMessage.textContent = 'Inloggning misslyckades. \n Kontrollera användarnamn och lösenord: ' + usernameInput;
-    loginMessage.classList.add('login-message'); // Lägg till klass för meddelandetext
 }
