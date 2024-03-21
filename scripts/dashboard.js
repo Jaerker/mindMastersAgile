@@ -1,5 +1,5 @@
 import api from './api.js';
-import { setupHamburger } from './hamburger.js';
+import { setupHamburger } from './mainFunctions.js';
 import setupLoader from './lazyLoader.js';
 import { checkIfAdmin } from './adminFunctions.js';
 

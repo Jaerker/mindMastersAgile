@@ -1,6 +1,5 @@
 import api from './api.js';
-import { setupHamburger } from './hamburger.js';
-import { checkIfAdmin } from './adminFunctions.js';
+import { setupHamburger, checkIfAdmin } from './mainFunctions.js';
 
 const oData= {
     editItemTemplate: {}, 

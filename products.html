@@ -13,11 +13,7 @@
     <div class="products__wrapper">
 
         <header class="indexHeader">
-            <a href="order.html">
-                <section>
-                    <img class="cart-icon" src="./Assets/bag.svg" alt="shoppingBasket">
-            </a>
-            <span class="product-number">5</span>
+
             </section>
 
             <img class="header__image" src="./Assets/graphics-header.svg" alt="header - leafs">
@@ -122,7 +118,62 @@
     </div>
     <div class="loader"></div>
 
-    <script type="module" src="./scripts/script.js"></script>
+    <!-- HÄR NERE ÄR KUNDKORGEN -->
+    <span class="product-number" id="cartAmountTop">5</span>
+    
+    <a href="#" id="cartBtn">
+
+            <img class="cart-icon" src="./Assets/bag.svg" alt="shoppingBasket">
+    </a>
+
+
+    <section id="cartDialog" class="cart-dialog cart-dialog--hidden">
+
+        <dialog class="dialog" open>
+
+
+            <h1 class="orderPage__title"> Din beställning</h1>
+            <br>
+            <br>
+
+            <ul class="orderPage__order" id="ulForCart">
+                <li class="orderPage__order-list" id="idHere">
+                    <div class="test-flex">
+                        <h3 class="orderPage__sub-heading">Bryggkaffe<span class="dotted-line">. . . . . . . . . .
+                            </span>
+                        </h3>
+                        <p class="order__quantity"><i class="fa-solid fa-circle-minus"></i><span
+                                class="product-quantity">2</span></i><i class="fa-solid fa-circle-plus"></i>
+                    </div>
+                    <p>98 kr</p>
+                    <br>
+                    <br>
+                </li>
+
+                
+            </ul>
+
+            <section class="orderPage__total">
+                <h2 id="totalHeading" class="orderPage__total-heading">Total...................... <span id="totalAmount">343</span> kr</h2>
+                <p>ink moms + drönarleverans</p>
+            </section>
+
+            <br>
+            <br>
+            <button id="orderBtn" class="order__button">Take my money!</button>
+
+
+            <!-- Glöm inte att ta bort alla BR och använd css styling istället -->
+            <br>
+            <br>
+            <a class="empty-trashcan" id="emptyTrash" href="#">Töm varukorg<i class="fa-solid fa-trash"></i></a>
+
+        </dialog>
+        </section>
+
+
+
+    <script type="module" src="./scripts/productsPage.js"></script>
 </body>
 
 </html>

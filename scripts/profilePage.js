@@ -1,7 +1,6 @@
 import api from './api.js';
-import { setupHamburger } from './hamburger.js';
+import { setupHamburger, checkIfAdmin } from './mainFunctions.js';
 import setupLoader from './lazyLoader.js';
-import { checkIfAdmin } from './adminFunctions.js';
 
 window.addEventListener('load', async () => {
 
