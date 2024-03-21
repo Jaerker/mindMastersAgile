@@ -33,7 +33,7 @@
                     <input type="password" id="login-password" name="password" required>
 
                     <input type="submit" value="Login" id="login-submit">
-                    <button class="toggle-btn" onclick="toggleForm()">New Registration</button>
+                    <button class="toggle-btn" onclick="toggleForm(event)">New Registration</button>
 
 
                 </form>
@@ -58,7 +58,7 @@
                     <input type="submit" value="Register">
 
                     <div class="gdpr-container">
-                        <button class="toggle-btn" onclick="toggleForm()">Back to Login</button>
+                        <button class="toggle-btn" onclick="toggleForm(event)">Back to Login</button>
                         <p>Godkänn GDPR</p>
                         <label class="custom-checkbox">
                             <input type="checkbox" id="gdprCheckbox" class="checkbox-input">
@@ -74,7 +74,8 @@
 
 
         <script>
-            function toggleForm() {
+            function toggleForm(event) {
+                event.preventDefault(); // Prevent form submission
                 var loginForm = document.getElementById('loginForm');
                 var registerForm = document.getElementById('registerForm');
                 loginForm.classList.toggle('active');
@@ -89,7 +90,8 @@
                 return true;
             }
 
-            function toggleForm() {
+            function toggleForm(event) {
+                event.preventDefault(); // Prevent form submission
                 var loginForm = document.getElementById('loginForm');
                 var registerForm = document.getElementById('registerForm');
                 loginForm.classList.toggle('active');
