@@ -1,14 +1,15 @@
 import api from './api.js';
 import { setupHamburger } from './hamburger.js';
 import setupLoader from './lazyLoader.js';
+import { checkIfAdmin } from './adminFunctions.js';
 
 window.addEventListener('load', async () => {
 
     if (!api.user.getCurrentUser()) {
         location.href = '/login.html';
     }
-
-    // api.user.login('bergwallz');
+   
+    checkIfAdmin();
 
     setupHamburger();
     setupLoader();
@@ -30,6 +31,7 @@ window.addEventListener('load', async () => {
         profileImgRef.setAttribute('src', newProfileImage);                     //Ändra bilden på hemsidan för profilen
         await api.user.change(userToChange);                                    //Skicka tillbaka ändringen på användaren
     });
+
 
     //Ändra lösenord
     const changePasswordBtn = document.querySelector('#changePassword');
@@ -54,7 +56,6 @@ window.addEventListener('load', async () => {
         api.user.logout();
         location.href = '/';
     });
-
     getOrderHistory();
 
 
@@ -124,8 +125,8 @@ function createOrderHistoryElement(historyItem, classList = []) {
         listElement.classList.add(classList);
     }
     let sectionElement = document.createElement('section');
-    console.log(typeof (historyItem));
-    if (typeof (historyItem) === 'object') {
+if(typeof(historyItem) === 'object'){
+
 
         sectionElement.classList.add('id-and-date');
         sectionElement.append(createListElement(historyItem.id, 'order-id-bold'), createListElement(historyItem.timestamp));

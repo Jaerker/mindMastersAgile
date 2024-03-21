@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airbeanz</title>
+    <link rel="stylesheet" href="./styles/pages/dashboard-style.css">
+</head>
+<body>
+    <div class="dashboard__wrapper">
+        <header>
+            <img class="header__image" src="./Assets/graphics-header.svg" alt="header - leafs">
+            <button class="menu-hamburger menu-hamburger--closed" id="menuHamburger"></button>
+            <nav class="menu menu--hidden" id="navMenu">
+                <ul class="menu__list" id="menuList">
+                    <li class="menu__choice"><a href="./products.html" class="menu__link">Meny</a></li>
+                    <li class="menu__choice"><a href="./about.html" class="menu__link">Vårt kaffe</a></li>
+                    <li class="menu__choice"><a href="./profile.html" class="menu__link">Min profil</a></li>
+                    <li class="menu__choice"><a href="./status.html" class="menu__link">Orderstatus</a></li>
+                </ul>
+            </nav>
+        </header>
+    
+        <main class="dashboard-details__main-wrapper">
+            <section class="dashboard-details__info">
+                <h1 class="dashboard-details__title">Produkter</h1>
+            </section>
+            <button class="dashboard-details__add-new-product" id="newProduct">LÄGG TILL NY PRODUKT</button>
+
+            <ul class="dashboard-details__item-list" id="productsList">
+                <li class="dashboard-details__item" id="product1">
+                    <h2 class="item__title"></h2>
+                    <h3 class="item__price-header">Pris <span class="item__price"></span> kr</h3>
+             
+                    <button class="item__button-for-open">MER INFO</button>
+                    <section class="item__detailed-information item__detailed-information--hidden" id="extraInfo">
+
+ 
+                            <button class="item__button-for-edit" >ÄNDRA</button>
+
+                        <h3 class="item__description-header">Beskrivning </h3>
+                        <p class="item__description"></p>
+                        <h3 class="item__longer-description-header">Längre beskrivning</h3>
+                        <p class="item__longer-description"></p>
+                    
+                    </section></li>
+                
+            </ul>
+    
+    
+    
+        </main>
+        <footer>
+            <img class="footer__img" src="./Assets/graphics-footer.svg" alt="footer - leafs">
+        </footer>
+    </div>
+    <section class="popover-dialog popover-dialog--hidden">
+        <dialog class="dashboard-details__edit-box" open>
+            <form class="dashboard-details__editor">
+                <label class="form-label" for="text" >Titel</label>
+                <input class="form-input" required type="text" name="title" id="title" placeholder="Titel">
+                <label class="form-label" for="price" >Pris</label>
+                <input class="form-input" required type="number" name="price" id="price" placeholder="Pris">
+                
+                <label class="form-label" for="desc" >Kort beskrivning</label>
+                <textarea required  type="text" rows="4" name="desc" id="desc" placeholder="Kort beskrivning"></textarea>
+                <label class="form-label" for="longerDesc" >Längre beskrivning</label>
+                <textarea required  type="text" rows="8" name="longerDesc" id="longerDesc" placeholder="Längre beskrivning"></textarea>
+<section class="two-buttons-next-to-each-other">
+    <button class="popover-dialog__button popover-dialog__button--green" type="submit" id="submitBtn">LÄGG TILL</button>
+    <button class="popover-dialog__button popover-dialog__button--red" id="goBackBtn">GÅ TILLBAKA</button>
+
+</section>
+                    <button class="popover-dialog__button popover-dialog__button--red popover-dialog__button--danger" id="removeBtn">TA BORT</button>
+
+            
+            </form>
+    </dialog>
+    </section>
+    
+    <script type="module" src="./scripts/dashboardDetails.js"></script>
+</body>
+</html>

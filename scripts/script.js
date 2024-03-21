@@ -1,4 +1,5 @@
 import api from './api.js';
+import { checkIfAdmin } from './adminFunctions.js';
 
 const oData = {
     menuIsHidden: false
@@ -6,11 +7,14 @@ const oData = {
 
 window.addEventListener('load', async () => {
 
+    //Dessa är här om man inte har någon info i localStorage, så man uppdaterar den korrekt!
+    // await api.user.list();
+    // await api.product.list();
+    api.user.login('jesper123');
+    // api.orderHistory.list();
 
-    await api.user.list();
-    await api.product.list();
-    // api.user.login('bergwallz');
-    api.orderHistory.list();
+    const currentUser = await api.user.details(api.user.getCurrentUser());
+    checkIfAdmin();
 
 
     const loader = document.querySelector('.loader');
