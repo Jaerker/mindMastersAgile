@@ -116,3 +116,28 @@ hr {
   width: 70%;
   margin: auto;
 }
+
+@media only screen and (min-width: 768px) {
+  .profile__heading {
+    font-size: 30px; /* Increase font size for profile heading */
+  }
+
+  p {
+    font-size: 30px; /* Increase font size for paragraphs */
+  }
+
+  .profile__picture {
+    border-radius: 20%; /* Adjust border radius for profile picture */
+    width: 200px; /* Set width of profile picture */
+    height: 200px; /* Set height of profile picture */
+  }
+
+  .profile__changePassword,
+  .profile__changeImg {
+    font-size: xx-large; /* Increase font size for change password and change image buttons */
+  }
+
+  footer {
+    padding: 3rem; /* Add padding to the footer for better spacing */
+  }
+}
