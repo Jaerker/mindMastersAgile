@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="./styles/pages/order-style.css">
 <script src="https://kit.fontawesome.com/78900e0811.js" crossorigin="anonymous"></script>
 
+
 <body class="orderBody">
 
 
@@ -17,11 +18,16 @@
         <header>
             <img class="orderPage__header" src="./Assets/graphics-header.svg" alt="Header Leafs">
         </header>
-
+        <a href="products.html">
+            <section>
+                <img class="cart-icon" src="./Assets/bag.svg" alt="shoppingBasket">
+        </a>
+        <span class="product-number">5</span>
+        </section>
 
 
         <button class="menu-hamburger menu-hamburger--closed" id="menuHamburger"></button>
-        
+
 
 
         <main class="orderPage__main-container">
@@ -67,7 +73,7 @@
                             </h3>
 
 
-                            <p class="order__quantity"><i class="fa-solid fa-circle-minus"></i><span>
+                            <p class="order__quantity"><i class="fa-solid fa-circle-minus"></i><span
                                     id="quantity">4</span></i><i class="fa-solid fa-circle-plus"></i>
                         </div>
                         <p>196 kr</p>
@@ -103,4 +109,5 @@
 
     <script type="module" src="./scripts/script.js"></script>
 </body>
+
 </html>
