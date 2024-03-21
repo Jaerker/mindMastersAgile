@@ -153,7 +153,6 @@ export const updateCart = (itemToUpdate, amount) => {
 }
 
 const setupProductListItemElement = (item, itemTemplate) => {
-    console.log(item);
     itemTemplate.querySelector('.products__coffee-title').textContent = item.title.length > 15 ? `${item.title.slice(0,15)}...` : item.title;
     itemTemplate.querySelector('.product-price').textContent = item.price;
     itemTemplate.querySelector('.products__coffee-description').textContent = item.desc;
