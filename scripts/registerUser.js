@@ -2,6 +2,8 @@
 
 import api from './api.js';
 
+import { users } from './loginPage.js';
+
 // Function to check if the username is already taken
 async function isUsernameTaken(username) {
     const userList = await api.user.list();
@@ -38,13 +40,19 @@ async function registerUser(username, email, password, confirmPassword) {
         password: password // You might want to hash the password before storing it
     };
 
+    // Add user to the users array
+    users.push(userToAdd);
+
     // Add user to the user list
     const result = await api.user.add(userToAdd);
     if (result === true) {
         console.log("User added successfully:", userToAdd); // Log the newly added user
+
         console.log("Updated user list:", await api.user.list()); // Log the updated user list
         return { success: true, message: 'User registered successfully.' };
     } else {
+        // Remove the user from the users array if adding to the API fails
+        users.pop();
         return { success: false, message: 'Failed to register user.' };
     }
     
