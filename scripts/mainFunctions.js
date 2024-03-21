@@ -69,7 +69,8 @@ export const setupCart = async () => {
     
     document.querySelector('#orderBtn').disabled = api.cart.itemCounter() === 0;
     document.querySelector('#orderBtn').addEventListener('click', () => {
-        location.href = '/status.html';
+        
+        location.href = api.user.getCurrentUser() ? '/status.html' : '/login.html';
     });
 
     oData.emptyCartListTemplate = document.querySelector('.orderPage__empty-cart').cloneNode(true);

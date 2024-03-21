@@ -12,7 +12,6 @@ window.addEventListener('load', async () => {
     const currentUser = await api.user.details(api.user.getCurrentUser());
     checkIfAdmin();
     setupHamburger();
-    setupCart();
 
     const loader = document.querySelector('.loader');
         loader.classList.add('loader-hidden'); // Ta bort punkten från "loader-hidden"

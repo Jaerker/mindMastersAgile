@@ -32,7 +32,6 @@ const user = {
             const userList = await user.list();
             const chosenUser = userList.find(x => x.username === username);
             if(!chosenUser){
-                console.log('Användaren finns inte')
                 return false;
             }
             
