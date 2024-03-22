@@ -3,11 +3,11 @@ const userApi = 'https://santosnr6.github.io/Data/airbeanusers.json';
 const randomApi = (num) => `https://randomuser.me/api/portraits/men/${num}.jpg`;
 
 const apiRequest = {
-    get: async (url) => await fetch(`${url}`).then(response => response.json()).catch(exception => {return {error:exception}})
+    get: async (url) => await fetch(`${url}`).then(response => response.json()).catch(exception => { return { error: exception } })
 }
 
 const localRequest = {
-    get:  (item)       => JSON.parse(localStorage.getItem(item)),
+    get: (item) => JSON.parse(localStorage.getItem(item)),
     change: (item, data) => localStorage.setItem(item, JSON.stringify(data)),
     remove: (item) => localStorage.removeItem(item)
 }
@@ -16,9 +16,9 @@ const user = {
 
     list: async () => {
         let data = localRequest.get('users');
-        if(!data){
+        if (!data) {
             const apiCall = await apiRequest.get(userApi);
-            if(apiCall.error){
+            if (apiCall.error) {
                 return apiCall;
             }
             localRequest.change('users', apiCall.users);
@@ -27,24 +27,24 @@ const user = {
         return data;
     },
 
-    details: async(username) => {
-        try{
+    details: async (username) => {
+        try {
             const userList = await user.list();
             const chosenUser = userList.find(x => x.username === username);
-            if(!chosenUser){
+            if (!chosenUser) {
                 return false;
             }
-            
+
             return chosenUser;
-        }catch(e){
+        } catch (e) {
             console.log(e);
             return false;
-        }   
+        }
     },
 
     add: async (userToAdd) => {
-        try{
-         
+        try {
+
             const userList = await user.list();
             userToAdd.role = 'user';
             userToAdd.profile_image = '../Assets/profile.svg';
@@ -52,7 +52,7 @@ const user = {
             localRequest.change('users', userList);
 
             return true;
-        }catch(e){
+        } catch (e) {
             console.log(e);
             return false;
         }
@@ -61,7 +61,7 @@ const user = {
      * 
      * @param {string} username = the current user that logs in 
      */
-    login: (username) => localRequest.change('currentUser', {username: username}),
+    login: (username) => localRequest.change('currentUser', { username: username }),
 
     logout: () => localRequest.remove('currentUser'),
 
@@ -72,10 +72,10 @@ const user = {
      * @returns {boolean} TRUE if successful, FALSE if not.
      */
     change: async (userToChange) => {
-        try{
+        try {
             const userList = await user.list();
             const oldUser = userList.find(x => x.username === userToChange.username);
-            if(!oldUser){
+            if (!oldUser) {
                 return false;
             }
             const newList = userList.filter(x => x.username !== userToChange.username);
@@ -83,10 +83,10 @@ const user = {
             localRequest.change('users', newList);
 
             return true;
-        }catch(e){
+        } catch (e) {
             return e;
         }
-        
+
     },
 }
 
@@ -96,9 +96,9 @@ const product = {
      */
     list: async () => {
         let data = localRequest.get('products');
-        if(!data){
+        if (!data) {
             const apiCall = await apiRequest.get(productApi);
-            if(apiCall.error){
+            if (apiCall.error) {
                 return apiCall;
             }
             localRequest.change('products', apiCall.menu);
@@ -122,15 +122,15 @@ const product = {
      * @returns {boolean} TRUE if successful, FALSE if not.
      */
     add: async (productToAdd) => {
-        try{
-         
+        try {
+
             const list = await product.list();
-            productToAdd.id = list[list.length-1].id+1;
+            productToAdd.id = list[list.length - 1].id + 1;
             list.push(productToAdd);
             localRequest.change('products', list);
 
             return true;
-        }catch(e){
+        } catch (e) {
             console.log(e);
             return false;
         }
@@ -141,16 +141,16 @@ const product = {
      * @returns {boolean} TRUE if successful, FALSE if not.
      */
     remove: async (productId) => {
-        try{
-         
+        try {
+
             const list = await product.list();
-            if(!list.find(x => x.id === productId)){
+            if (!list.find(x => x.id === productId)) {
                 return false
             }
             localRequest.change('products', list.filter(x => x.id !== productId));
 
             return true;
-        }catch(e){
+        } catch (e) {
             return false;
         }
     },
@@ -160,34 +160,45 @@ const product = {
      * @returns {boolean} TRUE if successful, FALSE if not.
      */
     change: async (productToChange) => {
-        try{
+        try {
             const list = await product.list();
             const oldProduct = list.find(x => x.id === productToChange.id);
-            if(!oldProduct){
+            if (!oldProduct) {
                 return false;
             }
             let newList = list.filter(x => x.id !== productToChange.id);
             newList.push(productToChange);
             newList = newList.sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
-            
+
             localRequest.change('products', newList);
 
             return true;
-        }catch(e){
+        } catch (e) {
             return e;
         }
     },
 }
 
 const orderHistory = {
-    list: () => {
-        
+    listAll: () => {
+
         const data = localRequest.get('orderHistory');
-        if(!data){    
+        if (!data) {
             localRequest.change('orderHistory', []);
             return localRequest.get('orderHistory');
         }
-        if(user.getCurrentUser()){
+
+        return data;
+
+    },
+    list: () => {
+
+        const data = localRequest.get('orderHistory');
+        if (!data) {
+            localRequest.change('orderHistory', []);
+            return localRequest.get('orderHistory');
+        }
+        if (user.getCurrentUser()) {
 
             const results = data.filter(x => x.username === user.getCurrentUser());
             return results;
@@ -196,35 +207,51 @@ const orderHistory = {
         return data;
     },
     add: (orderToAdd) => {
-        if(!orderToAdd){
+        if (!orderToAdd) {
             return false;
         }
-        try{
-         
-            const list = orderHistory.list();
+        try {
+
+            const list = orderHistory.listAll();
             list.push(orderToAdd);
             localRequest.change('orderHistory', list);
             return true;
-        }catch(e){
+        } catch (e) {
             return e;
         }
     },
     getSum: () => {
         const data = orderHistory.list();
 
-        if(!data || !user.getCurrentUser()){
+        if (!data || !user.getCurrentUser()) {
             return 0;
         }
         let counter = 0;
-        data.forEach(item => {counter += item.totalSum});
+        data.forEach(item => { counter += item.totalSum });
 
         return counter;
 
+    },
+    latestOrder: () => {
+        // const listAll = orderHistory.listAll();
+
+        try {
+            const list = orderHistory.list();
+            if (!list) {
+                const listAll = orderHistory.listAll();
+                localRequest.change('latestOrder', listAll[listAll.length - 1]);
+                return true;
+            }
+            localRequest.change('latestOrder', list[list.length - 1]);
+            return true;
+        } catch (e) {
+            return false;
+        }
     }
 }
 
 const profileImage = {
-    getRandom: () =>  randomApi(Math.floor(Math.random()*100))
+    getRandom: () => randomApi(Math.floor(Math.random() * 100))
 }
 //Hur ser cart ut?
 /*
@@ -245,7 +272,7 @@ FÖRSLAG:
 const cart = {
     list: () => {
         const data = localRequest.get('cart');
-        if(!data){    
+        if (!data) {
             localRequest.change('cart', []);
             return localRequest.get('cart');
         }
@@ -253,22 +280,22 @@ const cart = {
         return data;
     },
     add: async (productId) => {
-        if(productId || productId>=0){
+        if (productId || productId >= 0) {
             const list = cart.list();
 
             let found = false;
             list.forEach(element => {
-                if(element.id === productId){
-                    element.amount +=1;
+                if (element.id === productId) {
+                    element.amount += 1;
                     found = true;
                 }
             });
-            if(!found){
+            if (!found) {
                 const productInfo = await product.details(productId);
-                if(!productInfo){
+                if (!productInfo) {
                     return false;
                 }
-                list.push({id:productId, productInfo: productInfo, amount:1});
+                list.push({ id: productId, productInfo: productInfo, amount: 1 });
             }
             localRequest.change('cart', list);
             return true;
@@ -280,21 +307,21 @@ const cart = {
         let found = false;
         let emptyElement = -1;
         list.forEach(element => {
-            if(element.id === productId){
+            if (element.id === productId) {
 
-                element.amount -=1;
+                element.amount -= 1;
                 found = true;
 
-                if(element.amount === 0){
+                if (element.amount === 0) {
                     emptyElement = element.id;
                 }
             }
 
         });
-        if(!found){
+        if (!found) {
             return false;
         }
-        if(emptyElement !== -1){
+        if (emptyElement !== -1) {
             list = list.filter(x => x.id !== emptyElement);
         }
         localRequest.change('cart', list);
@@ -303,18 +330,18 @@ const cart = {
     },
     itemCounter: () => {
         const items = cart.list();
-        if(items.length<=0){
+        if (items.length <= 0) {
             return 0;
         }
-        else{
+        else {
             let counter = 0;
             items.forEach(item => {
-                counter +=item.amount;
+                counter += item.amount;
             });
             return counter;
         }
     },
-    clear : () => localRequest.remove('cart')
+    clear: () => localRequest.remove('cart')
 }
 
 const api = {

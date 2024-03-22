@@ -67,9 +67,9 @@ document.querySelector('.register-form').addEventListener('submit', async (event
     const registrationResult = await registerUser(username, email, password, confirmPassword);
     if (registrationResult.success) {
         alert(registrationResult.message);
-        // Redirect or perform any other actions after successful registration
+        location.href = '/products.html';
     } else {
         alert(registrationResult.message);
-        // Optionally, display error message to the user
+        
     }
 });
