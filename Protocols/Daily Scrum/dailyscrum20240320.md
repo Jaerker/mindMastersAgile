@@ -58,7 +58,7 @@ Var och en svarar på frågorna nedan, 1 person antecknar
 >  Gjorde klart profil-funktionerna (Byta lösenord/profil bild.)
 #### Vad ska du göra idag?
 > Pusha profil-funktionen till github
-Se över grupp-reflektionerna.
+>Se över grupp-reflektionerna.
 #### Finns det några hinder?
 > Inga hinder.
 
@@ -67,10 +67,10 @@ Se över grupp-reflektionerna.
 > Påbörjade designen för app/mobil på Login-sidan.
 #### Vad ska du göra idag?
 > Göra klart login-sidans design och kolla igenom helheten av "appen" för att se vad som behöver fixas.
-Samt kolla på individuella uppgiften.
+> Samt kolla på individuella uppgiften.
 #### Finns det några hinder?
 > Det finns inga hinder.
 
 ### Övrigt
 > Planerar in tid för att gemensamt gå igenom grupp-frågorna (reflektionerna) för eximinationen.
- Torsdag morgon, efter dailyScrum-mötet.
+> Torsdag morgon, efter dailyScrum-mötet.
