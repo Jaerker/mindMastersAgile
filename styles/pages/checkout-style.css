@@ -1,0 +1,136 @@
+@import url("../root.css");
+
+body {
+    background: var(--pink-background-color);
+}
+
+h2,
+h1 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.checkout__wrapper {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family:var(--font-family1);
+}
+
+
+
+
+.checkout__order-info{
+    background:var(--color-white);
+    width:90vw;
+    border-radius:5px;
+    padding:.5rem 1rem;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+
+}
+
+.order__list{
+    list-style: none;
+}
+.order__title{
+    text-align:center;
+    text-decoration: underline;
+    margin: .5rem 0 1rem 0;
+}
+.order__total,
+.order__list-item{
+    display:flex;
+    justify-content: space-between;
+    margin: .5rem 1rem;
+}
+.order__list-item--line{
+    content: '';
+    display: block;
+    width: 95%;
+    height: 2px;
+    border-radius: 1px;
+    margin: 10px auto;
+    background: black;
+    opacity: 20%;
+}
+.order__product-title{
+    max-width: 160px;
+}
+.order__product-price{
+    font-weight:700;
+}
+.order__total-price-paragraph{
+    font-size: 1.5rem;
+    font-weight:700;
+
+}
+
+.order__login-button{
+    padding:.5rem .5rem;
+    margin-top:1.5rem;
+    font-size:1.2rem;
+
+    border-style:none;
+    border: 2px solid var(--color-green);
+    background:transparent;
+    color:var(--color-green);
+    font-weight:700;
+    border-radius:10px;
+}
+
+.order__customer-info{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap:1rem;
+    margin-top:1rem;
+}
+
+.order__customer-info label{
+    font-size:1.2rem;
+    font-weight:600;
+}
+.order__customer-info input[type=text]{
+    padding: .5rem 1rem;
+    font-size:1.2rem;
+    font-weight:600;
+    text-align: center;
+
+}
+
+.order__customer-info input[type=submit]{
+    padding:.5rem .5rem;
+    margin:1rem 0;
+    font-size:1.2rem;
+
+    border-style:none;
+    background:var(--color-green);
+    color:var(--color-white);
+    font-weight:700;
+    border-radius:10px;
+
+}
+
+
+
+.checkout__go-back-button{
+    margin-top:1.5rem;
+    font-size:1.2rem;
+
+    border-style:none;
+    background:transparent;
+    color:var(--color-white);
+    font-weight:700;
+    border-radius:10px;
+    background:var(--red-color);
+    padding:1rem 1.5rem;
+
+}

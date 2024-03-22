@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="./styles/pages/checkout-style.css">
+    <script src="https://kit.fontawesome.com/78900e0811.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="checkout__wrapper">
+
+        <header class="indexHeader">
+
+            </section>
+
+            <img class="header__image" src="./Assets/graphics-header.svg" alt="header - leafs">
+            
+            <button class="menu-hamburger menu-hamburger--closed" id="menuHamburger"></button>
+            <nav class="menu menu--hidden" id="navMenu">
+                <ul class="menu__list" id="menuList">
+                    <li class="menu__choice"><a href="./products.html" class="menu__link">Meny</a></li>
+                    <li class="menu__choice"><a href="./about.html" class="menu__link">Vårt kaffe</a></li>
+                    <li class="menu__choice"><a href="./profile.html" class="menu__link">Min profil</a></li>
+                    <li class="menu__choice"><a href="./status.html" class="menu__link">Orderstatus</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main class="checkout__order-info">
+            <ul class="order__list" id="orderList">
+                <h1 class="order__title">ORDER</h1>
+                <section class="order__list-item-section">
+                    <li class="order__list-item">
+                        <h3><span class="order__product-title">Latte Macchiato</span> x<span class="order__product-amount">2</span></h3>
+                        <p><span class="order__product-price">59</span> KR</p>
+                        
+                    </li>
+                    <li class="order__list-item order__list-item--line">
+                    </li>
+                </section>
+                
+
+                
+            </ul>
+
+            <section class="order__total">
+                <h2>TOTAL </h2>
+                <p class="order__total-price-paragraph"><span class="order__total-price" id="totalPrice">59</span> KR</p>
+            </section>
+            <button class="order__login-button" id="loginBtn">Vill du logga in innan köpet?</button>
+            <form class="order__customer-info" id="checkoutForm" action="">
+                <label for="crditCard">Kortnummer</label>
+                <input required type="text" name="creditCard" id="creditCard" placeholder="XXXX-XXXX-XXXX-XXXX">
+                <label for="address">Adress</label>
+                <input required type="text" name="address" id="address" placeholder="Väggatan 10, XXXXX Ortland">
+                <label for="name">Ditt namn / användarnamn</label>
+                <input required type="text" name="name" id="name" placeholder="Ditt användarnamn">
+                <input type="submit" value="SLUTFÖR KÖP">
+            </form>
+
+        </main>
+
+
+
+        </section>
+
+        <footer>
+            <img class="footer__img" src="./Assets/graphics-footer.svg" alt="footer - leafs">
+        </footer>
+    </div>
+    <div class="loader"></div>
+
+
+
+
+    <script type="module" src="./scripts/checkoutPage.js"></script>
+</body>
+
+</html>

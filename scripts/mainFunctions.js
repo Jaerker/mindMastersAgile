@@ -6,6 +6,78 @@ export const oData = {
     emptyCartListTemplate: {}
 }
 
+const getTotalAmount = (cart) =>  {
+    let amount = 0;
+    if(cart.length === 0){
+        return '0';
+    }
+    cart.forEach(item => {
+        amount += item.productInfo.price * item.amount;
+    });
+    return amount;
+
+}
+
+const addCartListItem = (item) => {
+    const newItem = oData.listItemTemplate.cloneNode(true);
+
+    newItem.id = `cartItem${item.id}`;
+    newItem.querySelector('.product-quantity').textContent = item.amount;
+    newItem.querySelector('.orderPage__sub-heading').textContent = item.productInfo.title;
+    newItem.querySelector('.order-price').textContent = item.productInfo.price;
+
+    newItem.querySelector('.order__remove-btn').addEventListener('click', () => {
+        api.cart.remove(item.id);
+        updateCart(newItem, -1);
+
+
+    });
+    newItem.querySelector('.order__add-btn').addEventListener('click', async () => {
+
+        await api.cart.add(item.id).then(() => {
+            updateCart(newItem, 1);
+        });
+    });
+    return newItem;
+}
+const removeCartListItem = (itemId) => {
+    document.querySelector(`#${itemId}`).remove();
+
+}
+
+const setupProductListItemElement = (item, itemTemplate) => {
+    itemTemplate.querySelector('.products__coffee-title').textContent = item.title.length > 15 ? `${item.title.slice(0,15)}...` : item.title;
+    itemTemplate.querySelector('.product-price').textContent = item.price;
+    itemTemplate.querySelector('.products__coffee-description').textContent = item.desc;
+
+    itemTemplate.querySelector('.plus-btn').addEventListener('click', async () => {
+        let checkIfNew = api.cart.list().find(x => x.id === item.id);
+
+
+        await api.cart.add(item.id).then(async () =>{
+            if(!checkIfNew){
+                const ulRef = document.querySelector('#ulForCart');
+
+                let newItem = api.cart.list().find(x => x.id === item.id);
+                newItem.amount =0;
+                newItem = addCartListItem(newItem)
+                ulRef.append(newItem);
+                updateCart(newItem, 1);
+            }
+            else{
+                document.querySelector(`#cartItem${item.id}`).querySelector('.product-quantity').textContent = Number(document.querySelector(`#cartItem${item.id}`).querySelector('.product-quantity').textContent)+1;
+            }
+            document.querySelector('#cartAmountTop').textContent = api.cart.itemCounter();
+    document.querySelector('#totalAmount').textContent = getTotalAmount(api.cart.list());
+            
+
+        });
+    });
+
+    
+    return itemTemplate;
+}
+
 export const checkIfAdmin = async () => {
     const user = await api.user.details(api.user.getCurrentUser());
     if(user.role === 'admin'){
@@ -35,32 +107,6 @@ export const setupHamburger = () => {
         oData.menuIsHidden = !oData.menuIsHidden;
     });
 }
-const addCartListItem = (item) => {
-    const newItem = oData.listItemTemplate.cloneNode(true);
-
-    newItem.id = `cartItem${item.id}`;
-    newItem.querySelector('.product-quantity').textContent = item.amount;
-    newItem.querySelector('.orderPage__sub-heading').textContent = item.productInfo.title;
-    newItem.querySelector('.order-price').textContent = item.productInfo.price;
-
-    newItem.querySelector('.order__remove-btn').addEventListener('click', () => {
-        api.cart.remove(item.id);
-        updateCart(newItem, -1);
-
-
-    });
-    newItem.querySelector('.order__add-btn').addEventListener('click', async () => {
-
-        await api.cart.add(item.id).then(() => {
-            updateCart(newItem, 1);
-        });
-    });
-    return newItem;
-}
-const removeCartListItem = (itemId) => {
-    document.querySelector(`#${itemId}`).remove();
-
-}
 
 export const setupCart = async () => {
     document.querySelector('#cartAmountTop').textContent = api.cart.itemCounter();
@@ -70,7 +116,7 @@ export const setupCart = async () => {
     document.querySelector('#orderBtn').disabled = api.cart.itemCounter() === 0;
     document.querySelector('#orderBtn').addEventListener('click', () => {
         
-        location.href = api.user.getCurrentUser() ? '/status.html' : '/login.html';
+        location.href = '/checkout.html';
     });
 
     oData.emptyCartListTemplate = document.querySelector('.orderPage__empty-cart').cloneNode(true);
@@ -106,8 +152,6 @@ export const setupCart = async () => {
         cartDialogSectionRef.classList.toggle('cart-dialog--hidden');
     });
 }
-
-
 
 export const updateCart = (itemToUpdate, amount) => {
     document.querySelector('#orderBtn').disabled = api.cart.itemCounter() === 0;
@@ -152,38 +196,6 @@ export const updateCart = (itemToUpdate, amount) => {
 
 }
 
-const setupProductListItemElement = (item, itemTemplate) => {
-    itemTemplate.querySelector('.products__coffee-title').textContent = item.title.length > 15 ? `${item.title.slice(0,15)}...` : item.title;
-    itemTemplate.querySelector('.product-price').textContent = item.price;
-    itemTemplate.querySelector('.products__coffee-description').textContent = item.desc;
-
-    itemTemplate.querySelector('.plus-btn').addEventListener('click', async () => {
-        let checkIfNew = api.cart.list().find(x => x.id === item.id);
-
-
-        await api.cart.add(item.id).then(async () =>{
-            if(!checkIfNew){
-                const ulRef = document.querySelector('#ulForCart');
-
-                let newItem = api.cart.list().find(x => x.id === item.id);
-                newItem.amount =0;
-                newItem = addCartListItem(newItem)
-                ulRef.append(newItem);
-                updateCart(newItem, 1);
-            }
-            else{
-                document.querySelector(`#cartItem${item.id}`).querySelector('.product-quantity').textContent = Number(document.querySelector(`#cartItem${item.id}`).querySelector('.product-quantity').textContent)+1;
-            }
-            document.querySelector('#cartAmountTop').textContent = api.cart.itemCounter();
-    document.querySelector('#totalAmount').textContent = getTotalAmount(api.cart.list());
-            
-
-        });
-    });
-
-    
-    return itemTemplate;
-}
 export const setupProductList = async (rootElement) => {
     const productsSectionRef = document.querySelector('#productsList');
     const productList = await api.product.list();
@@ -194,14 +206,22 @@ export const setupProductList = async (rootElement) => {
 }
 
 
-function getTotalAmount(cart) {
-    let amount = 0;
-    if(cart.length === 0){
-        return '0';
-    }
-    cart.forEach(item => {
-        amount += item.productInfo.price * item.amount;
+export const setupCheckoutList = (template) => {
+
+    console.log(api.orderHistory.list());
+    const ulRef = document.querySelector('#orderList');
+    const list = api.cart.list();
+    list.forEach(item => {
+        const newListItem = template.cloneNode(true);
+        newListItem.querySelector('.order__product-title').textContent = item.productInfo.title;
+        newListItem.querySelector('.order__product-amount').textContent = item.amount;
+        newListItem.querySelector('.order__product-price').textContent = item.productInfo.price;
+        
+        ulRef.append(newListItem);
+
+
     });
-    return amount;
+
+    document.querySelector('#totalPrice').textContent = getTotalAmount(list);
 
 }
